@@ -1,0 +1,14 @@
+2024-10-02T01:50:36.104Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:51.074Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:53.013Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:53.484Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:53.885Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:54.251Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:54.632Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T01:56:56.393Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T02:28:29.756Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T02:28:34.519Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T02:29:01.728Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T02:29:45.893Z [error] : Error al crear el producto: dynamoDB.putItem is not a function
+2024-10-02T02:32:05.746Z [error] : Error al crear el producto: dynamoDB.put is not a function
+2024-10-02T02:32:09.447Z [error] : Error al obtener los productos: dynamoDB.scan is not a function
