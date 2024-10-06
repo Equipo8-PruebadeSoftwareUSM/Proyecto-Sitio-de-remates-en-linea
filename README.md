@@ -14,26 +14,34 @@ node -v
 npm -v
 ```
 
+2. Installar dependencias
 
-### AWS DynamoDb
-2. Instalé el SDK de AWS y se creo la carpeta 'node_modules'
+3. Ejecutar servidor
 ```
-npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
-```
-
-3. Instalé Winston para logs
-```
-npm install winston
+node server/server.js
 ```
 
-
-3. Instalé AWS CLI -> Se creó AWSCLI.pkg
+luego ir a localhost
 ```
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg AWSCLIV2.pkg -target /
+http://localhost:8002
 ```
 
-4. Configurar credenciales en AWS CLI
+### Installar dependencias
+1. Instalé el SDK de AWS y se creo la carpeta 'node_modules'
+```
+npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb dotenv winston
+
+```
+- express
+- body-parser 
+- @aws-sdk/client-dynamodb 
+- @aws-sdk/lib-dynamodb
+- *dontev*: para cargar el .env
+- *winston*: para logs 
+
+
+### Configuración local de AWS (no es necesaria hacerla, estamos ocupando el .env)
+1. Configurar credenciales en AWS CLI (no es necesario, porque se tiene el .env)
 ```
 aws configure
 ```
@@ -46,25 +54,35 @@ Default region name [None]: sa-east-1
 Default output format [None]: json
 ```
 
-5. Instalé 'dotenv' para manejar variables de entorno del archivo '.env'
-```
-npm install dotenv
-```
+## Estructura del Prouyecto
 
-6. Instalé express 
 ```
-npm install express
+.
+├── LICENSE
+├── README.md
+├── logs ----------------- (se guardan los logs de errores e informacion)
+│   ├── error.log
+│   └── server.log
+├── node_modules         
+├── package-lock.json
+├── package.json
+├── public --------------- (interfaz web)
+│   ├── index.html
+│   ├── script.js
+│   └── styles.css
+└── server --------------- (backend)
+    ├── config
+    ├── logger.js
+    ├── routes
+    ├── server.js
+    └── services
+
 ```
-
-
 
 ## Links
 
-(link de 'AWS SDK for Node.js' )[https://www.npmjs.com/package/aws-sdk]
+(link de 'AWS DynamoDB for javascript')[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/programming-with-javascript.html]
 (link Azure)[https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode]
-
-
-
 
 
 

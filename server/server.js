@@ -1,27 +1,17 @@
-// test.js
-const { addProduct, getProduct, deleteProduct } = require('./services/productService');
+const express = require('express');
+const bodyParser = require('body-parser');
+const productRoutes = require('./routes/productRoutes');
 
-// Producto de prueba
-const newProduct = {
-  id: "TeleporterX-001",  // Identificador único
-  nombre: "Teletransportador inestable",  // Nombre descriptivo
-  descripcion: "Dispositivo de teletransportación inestable, recuperado de las ruinas de Black Mesa. Usado con precaución.",  // Descripción del producto
-  categoria: "tecnología alienígena",  // Categoría
-  precio_inicial: 50000,  // Precio inicial en créditos (ejemplo)
-  duracion_remate: 86400,  // Duración del remate en segundos (24 horas)
-  imagen_url: "https://example.com/imagenes/teletransportador.png"  // URL de la imagen del producto
-};
+const app = express();
+const port = 8002; // Puerto de despliegue
 
-// Función de prueba para agregar y obtener el producto
-async function testProductOperations() {
-  console.log("Agregando producto...");
-  await addProduct(newProduct);
+// Middleware para parsear el cuerpo de las solicitudes
+app.use(bodyParser.json());
+app.use(express.static('public'));  // Sirve los archivos estáticos (HTML, CSS, JS)
 
-  console.log("Obteniendo producto...");
-  await getProduct("TeleporterX-001");
+// Usar las rutas de productos
+app.use('/api/products', productRoutes);
 
-  // console.log("Borrando producto...");
-  // await deleteProduct("Product02")
-}
-
-testProductOperations();
+app.listen(port, () => {
+  console.log(`Servidor ejecutándose en http://localhost:${port}`);
+});

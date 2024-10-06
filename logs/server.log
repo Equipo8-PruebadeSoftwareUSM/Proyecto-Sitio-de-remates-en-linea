@@ -1,14 +1,12 @@
-2024-10-02T01:50:36.104Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:51.074Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:53.013Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:53.484Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:53.885Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:54.251Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:54.632Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T01:56:56.393Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T02:28:29.756Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T02:28:34.519Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T02:29:01.728Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T02:29:45.893Z [error] : Error al crear el producto: dynamoDB.putItem is not a function
-2024-10-02T02:32:05.746Z [error] : Error al crear el producto: dynamoDB.put is not a function
-2024-10-02T02:32:09.447Z [error] : Error al obtener los productos: dynamoDB.scan is not a function
+2024-10-06T22:56:23.117Z [info] : Productos obtenidos de DynamoDB
+2024-10-06T22:56:23.121Z [info] : Productos obtenidos exitosamente
+2024-10-06T22:58:40.823Z [info] : Producto añadido a DynamoDB: helicóptero de combate (Producto-1728255520166)
+2024-10-06T22:58:40.824Z [info] : Producto agregado: helicóptero de combate (Producto-1728255520166)
+2024-10-06T22:58:41.026Z [info] : Productos obtenidos de DynamoDB
+2024-10-06T22:58:41.027Z [info] : Productos obtenidos exitosamente
+2024-10-06T23:08:55.441Z [info] : Productos obtenidos de DynamoDB
+2024-10-06T23:08:55.443Z [info] : Productos obtenidos exitosamente
+2024-10-06T23:09:18.277Z [info] : Producto actualizado en DynamoDB: Rayo McQueen (Producto-1728254276840)
+2024-10-06T23:09:18.278Z [info] : Producto actualizado: Rayo McQueen (Producto-1728254276840)
+2024-10-06T23:09:18.461Z [info] : Productos obtenidos de DynamoDB
+2024-10-06T23:09:18.462Z [info] : Productos obtenidos exitosamente

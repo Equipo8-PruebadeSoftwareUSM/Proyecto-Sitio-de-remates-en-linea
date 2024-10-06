@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Productos - El Rincón del Olvido</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Gestión de Productos</h1>
 
+  <!-- Formulario para agregar o editar producto -->
+  <form id="productForm">
+    <input type="hidden" id="productId" name="id"> <!-- Campo oculto para el ID del producto -->
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea>
+
+    <label for="categoria">Categoría:</label>
+    <input type="text" id="categoria" name="categoria" required>
+
+    <label for="precio_inicial">Precio Inicial:</label>
+    <input type="number" id="precio_inicial" name="precio_inicial" required>
+
+    <label for="duracion_remate">Duración del Remate (en segundos):</label>
+    <input type="number" id="duracion_remate" name="duracion_remate" required>
+
+    <label for="imagen_url">URL de la Imagen:</label>
+    <input type="url" id="imagen_url" name="imagen_url" required>
+
+    <button type="submit">Agregar/Actualizar Producto</button>
+  </form>
+
+  <h2>Lista de Productos</h2>
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Categoría</th>
+        <th>Precio Inicial</th>
+        <th>Duración Remate</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
