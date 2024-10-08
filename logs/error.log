@@ -1,1 +1,17 @@
 
+2024-10-07T23:34:07.912Z [error] : Error al agregar el producto en DynamoDB
+2024-10-07T23:34:07.913Z [error] : Error al agregar el producto
+2024-10-07T23:46:10.316Z [error] : Error al eliminar el producto con ID Producto-1728344210832
+2024-10-07T23:46:10.318Z [error] : Error al eliminar el producto con ID Producto-1728344210832
+2024-10-08T00:29:39.302Z [error] : Error al eliminar el producto con ID Producto-1728346727361
+2024-10-08T00:29:39.303Z [error] : Error al eliminar el producto con ID Producto-1728346727361
+2024-10-08T00:31:02.165Z [error] : Error al eliminar el producto con ID Producto-1728347440121
+2024-10-08T00:31:02.166Z [error] : Error al eliminar el producto con ID Producto-1728347440121
+2024-10-08T00:32:18.967Z [error] : Error al actualizar la imagen del producto
+2024-10-08T00:38:39.864Z [error] : Error al eliminar el producto con ID Producto-1728347698965
+2024-10-08T00:38:39.865Z [error] : Error al eliminar el producto con ID Producto-1728347698965
+2024-10-08T00:47:53.225Z [error] : Error al actualizar el producto
+2024-10-08T00:49:57.675Z [error] : Error al actualizar el producto
+2024-10-08T00:51:09.607Z [error] : Error al actualizar el producto
+2024-10-08T01:12:32.260Z [error] : Error al actualizar el producto
+2024-10-08T01:16:27.937Z [error] : Error al actualizar el producto

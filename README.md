@@ -29,15 +29,16 @@ http://localhost:8002
 ### Installar dependencias
 1. Instalé el SDK de AWS y se creo la carpeta 'node_modules'
 ```
-npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb dotenv winston
+npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb multer winston dotenv 
 
 ```
 - express
 - body-parser 
 - @aws-sdk/client-dynamodb 
 - @aws-sdk/lib-dynamodb
-- *dontev*: para cargar el .env
-- *winston*: para logs 
+- *dotenv*: para cargar el .env
+- *winston*: para logs
+- multer: manejo de archivos en imagenes 
 
 
 ### Configuración local de AWS (no es necesaria hacerla, estamos ocupando el .env)
@@ -68,6 +69,7 @@ Default output format [None]: json
 ├── package.json
 ├── public --------------- (interfaz web)
 │   ├── index.html
+│   ├── images
 │   ├── script.js
 │   └── styles.css
 └── server --------------- (backend)
@@ -82,6 +84,7 @@ Default output format [None]: json
 ## Links
 
 (link de 'AWS DynamoDB for javascript')[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/programming-with-javascript.html]
+(Operaciones dentro de AWSDynamoBd)[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/workbench.querybuilder.operationbuilder.api.html#workbench.querybuilder.operationbuilder.Put]
 (link Azure)[https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode]
 
 

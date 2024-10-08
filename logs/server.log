@@ -10,3 +10,349 @@
 2024-10-06T23:09:18.278Z [info] : Producto actualizado: Rayo McQueen (Producto-1728254276840)
 2024-10-06T23:09:18.461Z [info] : Productos obtenidos de DynamoDB
 2024-10-06T23:09:18.462Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:33:47.734Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:33:47.736Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:33:50.643Z [info] : Producto eliminado de DynamoDB: ID Producto-1728343706263
+2024-10-07T23:33:50.644Z [info] : Producto eliminado: ID Producto-1728343706263
+2024-10-07T23:33:52.749Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:33:52.750Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:34:07.912Z [error] : Error al agregar el producto en DynamoDB
+2024-10-07T23:34:07.913Z [error] : Error al agregar el producto
+2024-10-07T23:34:08.015Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:34:08.015Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:36:38.256Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:36:38.259Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:36:38.699Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:36:38.700Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:36:50.967Z [info] : Producto añadido a DynamoDB: Rayo McQueen (Producto-1728344210832)
+2024-10-07T23:36:50.968Z [info] : Producto agregado: Rayo McQueen (Producto-1728344210832)
+2024-10-07T23:36:51.052Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:36:51.052Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:37:40.601Z [info] : Producto añadido a DynamoDB: automata (Producto-1728344260454)
+2024-10-07T23:37:40.602Z [info] : Producto agregado: automata (Producto-1728344260454)
+2024-10-07T23:37:41.294Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:37:41.294Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:38:31.345Z [info] : Producto eliminado de DynamoDB: ID Producto-1728344210832
+2024-10-07T23:38:31.346Z [info] : Producto eliminado: ID Producto-1728344210832
+2024-10-07T23:38:31.468Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:38:31.468Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:44:54.580Z [info] : Producto actualizado en DynamoDB: Rayo McQueen (Producto-1728344210832)
+2024-10-07T23:44:54.583Z [info] : Producto actualizado: Rayo McQueen (Producto-1728344210832)
+2024-10-07T23:44:54.708Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:44:54.709Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:45:52.870Z [info] : Producto actualizado en DynamoDB: Rayo McQueen 2 (Producto-1728344210832)
+2024-10-07T23:45:52.871Z [info] : Producto actualizado: Rayo McQueen 2 (Producto-1728344210832)
+2024-10-07T23:45:52.997Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:45:52.997Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:46:10.316Z [error] : Error al eliminar el producto con ID Producto-1728344210832
+2024-10-07T23:46:10.318Z [error] : Error al eliminar el producto con ID Producto-1728344210832
+2024-10-07T23:46:10.485Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:46:10.485Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:48:03.397Z [info] : Producto actualizado en DynamoDB: Rayo (Producto-1728344210832)
+2024-10-07T23:48:03.398Z [info] : Producto actualizado: Rayo (Producto-1728344210832)
+2024-10-07T23:48:03.481Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:48:03.481Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:48:16.073Z [info] : Producto eliminado de DynamoDB: ID Producto-1728344210832
+2024-10-07T23:48:16.074Z [info] : Producto eliminado: ID Producto-1728344210832
+2024-10-07T23:48:16.164Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:48:16.164Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:54:32.165Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:54:32.168Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:54:54.961Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728345294779)
+2024-10-07T23:54:54.962Z [info] : Producto agregado: rayo (Producto-1728345294779)
+2024-10-07T23:54:55.122Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:54:55.123Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:55:02.209Z [info] : Producto eliminado de DynamoDB: ID Producto-1728345294779
+2024-10-07T23:55:02.209Z [info] : Producto eliminado: ID Producto-1728345294779
+2024-10-07T23:55:02.318Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:55:02.319Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:57:37.083Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:57:37.086Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:57:37.338Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:57:37.339Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:59:12.309Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:59:12.312Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:59:36.045Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728345575910)
+2024-10-07T23:59:36.046Z [info] : Producto agregado: rayo (Producto-1728345575910)
+2024-10-07T23:59:36.148Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:59:36.149Z [info] : Productos obtenidos exitosamente
+2024-10-07T23:59:42.001Z [info] : Producto eliminado de DynamoDB: ID Producto-1728345575910
+2024-10-07T23:59:42.002Z [info] : Producto eliminado: ID Producto-1728345575910
+2024-10-07T23:59:42.163Z [info] : Productos obtenidos de DynamoDB
+2024-10-07T23:59:42.163Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:12:25.915Z [info] : Producto actualizado en DynamoDB: automata (Producto-1728344260454)
+2024-10-08T00:12:25.915Z [info] : Producto actualizado: automata (Producto-1728344260454)
+2024-10-08T00:12:26.076Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:12:26.076Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:12:46.761Z [info] : Producto eliminado de DynamoDB: ID Producto-1728344260454
+2024-10-08T00:12:46.762Z [info] : Producto eliminado: ID Producto-1728344260454
+2024-10-08T00:12:46.874Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:12:46.874Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:18:30.648Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:18:30.651Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:18:47.563Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728346727361)
+2024-10-08T00:18:47.564Z [info] : Producto agregado: rayo (Producto-1728346727361)
+2024-10-08T00:18:47.672Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:18:47.673Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:24:46.037Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:24:46.041Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:25:04.737Z [info] : Producto añadido a DynamoDB: automata (Producto-1728347104604)
+2024-10-08T00:25:04.738Z [info] : Producto agregado: automata (Producto-1728347104604)
+2024-10-08T00:25:04.894Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:25:04.895Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:25:22.159Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728346727361)
+2024-10-08T00:25:22.160Z [info] : Producto actualizado: rayo (Producto-1728346727361)
+2024-10-08T00:25:22.270Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:25:22.271Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:25:44.667Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:25:44.668Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:29:34.401Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:29:34.403Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:29:37.176Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:29:37.177Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:29:39.302Z [error] : Error al eliminar el producto con ID Producto-1728346727361
+2024-10-08T00:29:39.303Z [error] : Error al eliminar el producto con ID Producto-1728346727361
+2024-10-08T00:29:39.451Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:29:39.452Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:30:13.925Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:30:13.928Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:30:15.869Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:30:15.870Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:30:17.929Z [info] : Producto eliminado de DynamoDB: ID Producto-1728347104604
+2024-10-08T00:30:17.930Z [info] : Producto eliminado: ID Producto-1728347104604
+2024-10-08T00:30:18.085Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:30:18.085Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:30:40.377Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728347440121)
+2024-10-08T00:30:40.379Z [info] : Producto agregado: rayo (Producto-1728347440121)
+2024-10-08T00:30:40.491Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:30:40.491Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:30:57.993Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347440121)
+2024-10-08T00:30:57.994Z [info] : Producto actualizado: rayo (Producto-1728347440121)
+2024-10-08T00:30:58.112Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:30:58.113Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:31:02.165Z [error] : Error al eliminar el producto con ID Producto-1728347440121
+2024-10-08T00:31:02.166Z [error] : Error al eliminar el producto con ID Producto-1728347440121
+2024-10-08T00:31:02.303Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:31:02.303Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:32:14.804Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347440121)
+2024-10-08T00:32:14.804Z [info] : Producto actualizado: rayo (Producto-1728347440121)
+2024-10-08T00:32:14.954Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:32:14.955Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:32:18.967Z [error] : Error al actualizar la imagen del producto
+2024-10-08T00:32:25.566Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:32:25.566Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:32:29.070Z [info] : Producto eliminado de DynamoDB: ID Producto-1728347440121
+2024-10-08T00:32:29.070Z [info] : Producto eliminado: ID Producto-1728347440121
+2024-10-08T00:32:29.201Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:32:29.201Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:34:59.325Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:34:59.325Z [info] : Producto agregado: rayo (Producto-1728347698965)
+2024-10-08T00:34:59.657Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:34:59.658Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:37:19.674Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:37:19.676Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:37:26.499Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:37:26.500Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:37:26.642Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:37:26.643Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:38:39.864Z [error] : Error al eliminar el producto con ID Producto-1728347698965
+2024-10-08T00:38:39.865Z [error] : Error al eliminar el producto con ID Producto-1728347698965
+2024-10-08T00:38:39.968Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:38:39.969Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:39:00.467Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:39:00.467Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:39:00.643Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:39:00.643Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:43:01.519Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:43:01.521Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:43:12.860Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:43:12.860Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:43:14.007Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:43:14.007Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:43:34.537Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:43:34.538Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:43:34.679Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:43:34.680Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:43:59.045Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:43:59.046Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:43:59.187Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:43:59.187Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:44:06.657Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:44:06.658Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:44:06.749Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:44:06.749Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:44:19.708Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728347698965)
+2024-10-08T00:44:19.709Z [info] : Producto actualizado: rayo (Producto-1728347698965)
+2024-10-08T00:44:19.794Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:44:19.795Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:46:59.562Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:46:59.565Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:47:01.150Z [info] : Producto eliminado de DynamoDB: ID Producto-1728347698965
+2024-10-08T00:47:01.151Z [info] : Producto eliminado: ID Producto-1728347698965
+2024-10-08T00:47:01.245Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:47:01.246Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:47:14.510Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728348434373)
+2024-10-08T00:47:14.510Z [info] : Producto agregado: rayo (Producto-1728348434373)
+2024-10-08T00:47:14.632Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:47:14.633Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:47:21.984Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728348434373)
+2024-10-08T00:47:21.984Z [info] : Producto actualizado: rayo (Producto-1728348434373)
+2024-10-08T00:47:22.117Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:47:22.117Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:47:41.749Z [info] : Producto actualizado en DynamoDB: rayo McQueen (Producto-1728348434373)
+2024-10-08T00:47:41.750Z [info] : Producto actualizado: rayo McQueen (Producto-1728348434373)
+2024-10-08T00:47:41.848Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:47:41.848Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:47:53.225Z [error] : Error al actualizar el producto
+2024-10-08T00:47:53.972Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:47:53.972Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:49:42.556Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:49:42.559Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:49:57.675Z [error] : Error al actualizar el producto
+2024-10-08T00:49:57.821Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:49:57.822Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:50:14.083Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:50:14.083Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:50:15.968Z [info] : Producto eliminado de DynamoDB: ID Producto-1728348434373
+2024-10-08T00:50:15.968Z [info] : Producto eliminado: ID Producto-1728348434373
+2024-10-08T00:50:16.052Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:50:16.053Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:50:40.929Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728348640828)
+2024-10-08T00:50:40.930Z [info] : Producto agregado: rayo (Producto-1728348640828)
+2024-10-08T00:50:41.078Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:50:41.079Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:51:09.607Z [error] : Error al actualizar el producto
+2024-10-08T00:51:09.705Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:51:09.706Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:51:24.042Z [info] : Producto eliminado de DynamoDB: ID Producto-1728348640828
+2024-10-08T00:51:24.042Z [info] : Producto eliminado: ID Producto-1728348640828
+2024-10-08T00:51:24.138Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:51:24.138Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:55:54.716Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:55:54.719Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:55:58.946Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:55:58.947Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:56:00.223Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:56:00.223Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:56:00.781Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:56:00.781Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:56:01.221Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:56:01.222Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:56:01.397Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:56:01.397Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:58:58.363Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:58:58.366Z [info] : Productos obtenidos exitosamente
+2024-10-08T00:59:15.200Z [info] : Producto añadido a DynamoDB: rayo McQueen (Producto-1728349155088)
+2024-10-08T00:59:15.201Z [info] : Producto agregado: rayo McQueen (Producto-1728349155088)
+2024-10-08T00:59:15.283Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T00:59:15.284Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:01:07.229Z [info] : Producto actualizado en DynamoDB: Rayo McQueen (Producto-1728349155088)
+2024-10-08T01:01:07.229Z [info] : Producto actualizado: Rayo McQueen (Producto-1728349155088)
+2024-10-08T01:01:07.329Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:01:07.330Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:02:08.667Z [info] : Producto actualizado en DynamoDB: Automata (Producto-1728349155088)
+2024-10-08T01:02:08.668Z [info] : Producto actualizado: Automata (Producto-1728349155088)
+2024-10-08T01:02:08.777Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:02:08.777Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:05:25.273Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:05:25.275Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:05:27.829Z [info] : Producto eliminado de DynamoDB: ID Producto-1728349155088
+2024-10-08T01:05:27.830Z [info] : Producto eliminado: ID Producto-1728349155088
+2024-10-08T01:05:27.907Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:05:27.908Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:05:39.868Z [info] : Producto añadido a DynamoDB: rayo McQueen (Producto-1728349539767)
+2024-10-08T01:05:39.869Z [info] : Producto agregado: rayo McQueen (Producto-1728349539767)
+2024-10-08T01:05:39.953Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:05:39.955Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:06:52.627Z [info] : Producto actualizado en DynamoDB: rayo McQueen (Producto-1728349539767)
+2024-10-08T01:06:52.628Z [info] : Producto actualizado: rayo McQueen (Producto-1728349539767)
+2024-10-08T01:06:52.720Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:06:52.721Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:07:04.372Z [info] : Producto actualizado en DynamoDB: rayo McQueen (Producto-1728349539767)
+2024-10-08T01:07:04.372Z [info] : Producto actualizado: rayo McQueen (Producto-1728349539767)
+2024-10-08T01:07:04.476Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:07:04.476Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:07:14.955Z [info] : Producto actualizado en DynamoDB: automata (Producto-1728349539767)
+2024-10-08T01:07:14.956Z [info] : Producto actualizado: automata (Producto-1728349539767)
+2024-10-08T01:07:15.046Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:07:15.046Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:07:17.274Z [info] : Producto eliminado de DynamoDB: ID Producto-1728349539767
+2024-10-08T01:07:17.275Z [info] : Producto eliminado: ID Producto-1728349539767
+2024-10-08T01:07:17.380Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:07:17.381Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:12:10.793Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:12:10.796Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:12:24.505Z [info] : Producto añadido a DynamoDB: rayo McQueen (Producto-1728349944408)
+2024-10-08T01:12:24.506Z [info] : Producto agregado: rayo McQueen (Producto-1728349944408)
+2024-10-08T01:12:24.590Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:12:24.591Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:12:32.260Z [error] : Error al actualizar el producto
+2024-10-08T01:12:32.338Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:12:32.339Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:12:44.651Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:12:44.651Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:12:47.314Z [info] : Producto eliminado de DynamoDB: ID Producto-1728349944408
+2024-10-08T01:12:47.314Z [info] : Producto eliminado: ID Producto-1728349944408
+2024-10-08T01:12:47.397Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:12:47.397Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:15:13.805Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:15:13.808Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:15:31.262Z [info] : Producto añadido a DynamoDB: rayo McQueen (Producto-1728350130859)
+2024-10-08T01:15:31.263Z [info] : Producto agregado: rayo McQueen (Producto-1728350130859)
+2024-10-08T01:15:31.362Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:15:31.363Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:15:47.017Z [info] : Producto añadido a DynamoDB: automata (Producto-1728350146927)
+2024-10-08T01:15:47.018Z [info] : Producto agregado: automata (Producto-1728350146927)
+2024-10-08T01:15:47.093Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:15:47.094Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:15:56.303Z [info] : Producto actualizado en DynamoDB: rayo McQueen (Producto-1728350130859)
+2024-10-08T01:15:56.303Z [info] : Producto actualizado: rayo McQueen (Producto-1728350130859)
+2024-10-08T01:15:56.381Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:15:56.382Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:16:27.937Z [error] : Error al actualizar el producto
+2024-10-08T01:16:28.028Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:16:28.029Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:16:34.617Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:16:34.618Z [info] : Productos obtenidos exitosamente
+2024-10-08T01:16:35.565Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T01:16:35.565Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:26:21.354Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:26:21.357Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:26:44.213Z [info] : Producto añadido a DynamoDB: rayo McQueen (Producto-1728354404097)
+2024-10-08T02:26:44.214Z [info] : Producto agregado: rayo McQueen (Producto-1728354404097)
+2024-10-08T02:26:44.353Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:26:44.354Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:30:39.774Z [info] : Producto añadido a DynamoDB: automata (Producto-1728354639310)
+2024-10-08T02:30:39.774Z [info] : Producto agregado: automata (Producto-1728354639310)
+2024-10-08T02:30:39.912Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:30:39.913Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:30:44.449Z [info] : Producto actualizado en DynamoDB: utomata (Producto-1728354639310)
+2024-10-08T02:30:44.450Z [info] : Producto actualizado: utomata (Producto-1728354639310)
+2024-10-08T02:30:46.055Z [info] : Producto actualizado en DynamoDB: Automata (Producto-1728354639310)
+2024-10-08T02:30:46.055Z [info] : Producto actualizado: Automata (Producto-1728354639310)
+2024-10-08T02:31:22.085Z [info] : Producto actualizado en DynamoDB: Automata (Producto-1728354639310)
+2024-10-08T02:31:22.086Z [info] : Producto actualizado: Automata (Producto-1728354639310)
+2024-10-08T02:31:59.354Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:31:59.354Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:32:11.401Z [info] : Producto actualizado en DynamoDB: Automata (Producto-1728354639310)
+2024-10-08T02:32:11.401Z [info] : Producto actualizado: Automata (Producto-1728354639310)
+2024-10-08T02:32:15.122Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:32:15.123Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:34:13.767Z [info] : Producto añadido a DynamoDB: codigo millonario (Producto-1728354853495)
+2024-10-08T02:34:13.768Z [info] : Producto agregado: codigo millonario (Producto-1728354853495)
+2024-10-08T02:34:13.849Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:34:13.849Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:34:34.620Z [info] : Producto actualizado en DynamoDB: Diagrama millonario (Producto-1728354853495)
+2024-10-08T02:34:34.621Z [info] : Producto actualizado: Diagrama millonario (Producto-1728354853495)
+2024-10-08T02:34:36.436Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:34:36.437Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:49:02.822Z [info] : Producto añadido a DynamoDB: Problema de Procom (Producto-1728355742478)
+2024-10-08T02:49:02.825Z [info] : Producto agregado: Problema de Procom (Producto-1728355742478)
+2024-10-08T02:49:02.910Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:49:02.911Z [info] : Productos obtenidos exitosamente
+2024-10-08T02:50:22.749Z [info] : Producto actualizado en DynamoDB: ayo McQueen (Producto-1728354404097)
+2024-10-08T02:50:22.750Z [info] : Producto actualizado: ayo McQueen (Producto-1728354404097)
+2024-10-08T02:51:15.300Z [info] : Producto actualizado en DynamoDB: Rayo McQueen (Producto-1728354404097)
+2024-10-08T02:51:15.301Z [info] : Producto actualizado: Rayo McQueen (Producto-1728354404097)
+2024-10-08T02:51:20.623Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T02:51:20.625Z [info] : Productos obtenidos exitosamente
