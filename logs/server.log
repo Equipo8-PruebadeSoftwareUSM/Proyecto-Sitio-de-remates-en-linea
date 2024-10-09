@@ -356,3 +356,37 @@
 2024-10-08T02:51:15.301Z [info] : Producto actualizado: Rayo McQueen (Producto-1728354404097)
 2024-10-08T02:51:20.623Z [info] : Productos obtenidos de DynamoDB
 2024-10-08T02:51:20.625Z [info] : Productos obtenidos exitosamente
+2024-10-08T23:57:16.797Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T23:57:16.800Z [info] : Productos obtenidos exitosamente
+2024-10-08T23:57:22.013Z [error] : Error al eliminar el producto con ID Producto-1728431322639
+2024-10-08T23:57:22.014Z [error] : Error al eliminar el producto con ID Producto-1728431322639
+2024-10-08T23:57:30.111Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T23:57:30.111Z [info] : Productos obtenidos exitosamente
+2024-10-08T23:57:39.834Z [info] : Producto añadido a DynamoDB: rayo (Producto-1728431859659)
+2024-10-08T23:57:39.836Z [info] : Producto agregado: rayo (Producto-1728431859659)
+2024-10-08T23:57:43.087Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T23:57:43.088Z [info] : Productos obtenidos exitosamente
+2024-10-08T23:58:13.365Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728431859659)
+2024-10-08T23:58:13.366Z [info] : Producto actualizado: rayo (Producto-1728431859659)
+2024-10-08T23:58:16.175Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T23:58:16.175Z [info] : Productos obtenidos exitosamente
+2024-10-08T23:58:35.575Z [info] : Producto actualizado en DynamoDB: rayo (Producto-1728431859659)
+2024-10-08T23:58:35.575Z [info] : Producto actualizado: rayo (Producto-1728431859659)
+2024-10-08T23:58:40.234Z [info] : Productos obtenidos de DynamoDB
+2024-10-08T23:58:40.234Z [info] : Productos obtenidos exitosamente
+2024-10-09T00:01:46.404Z [info] : Productos obtenidos de DynamoDB
+2024-10-09T00:01:46.407Z [info] : Productos obtenidos exitosamente
+2024-10-09T00:01:49.357Z [info] : Producto eliminado de DynamoDB: ID Producto-1728431859659
+2024-10-09T00:01:49.358Z [info] : Producto eliminado: ID Producto-1728431859659
+2024-10-09T00:02:07.351Z [info] : Producto añadido a DynamoDB: random (Producto-1728432127270)
+2024-10-09T00:02:07.352Z [info] : Producto agregado: random (Producto-1728432127270)
+2024-10-09T00:02:10.460Z [info] : Productos obtenidos de DynamoDB
+2024-10-09T00:02:10.460Z [info] : Productos obtenidos exitosamente
+2024-10-09T00:02:26.777Z [info] : Producto actualizado en DynamoDB: random (Producto-1728432127270)
+2024-10-09T00:02:26.778Z [info] : Producto actualizado: random (Producto-1728432127270)
+2024-10-09T00:02:30.690Z [info] : Productos obtenidos de DynamoDB
+2024-10-09T00:02:30.690Z [info] : Productos obtenidos exitosamente
+2024-10-09T00:02:57.581Z [info] : Producto actualizado en DynamoDB: random 2.0 (Producto-1728432127270)
+2024-10-09T00:02:57.582Z [info] : Producto actualizado: random 2.0 (Producto-1728432127270)
+2024-10-09T00:03:11.724Z [info] : Productos obtenidos de DynamoDB
+2024-10-09T00:03:11.724Z [info] : Productos obtenidos exitosamente

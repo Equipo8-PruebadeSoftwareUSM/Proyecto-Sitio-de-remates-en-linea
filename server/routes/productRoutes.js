@@ -32,36 +32,40 @@ router.get('/', async (req, res) => {
 
 // Endpoint para agregar un producto
 router.post('/add', upload.single('imagen'), async (req, res) => {
+  // Verificar si se proporcionó una imagen, de lo contrario, usar la imagen por defecto
+  const imagen_url = req.file ? `/uploads/${req.file.filename}` : '/images/default-image.png';
+
   const product = {
     id: req.body.id,
     nombre: req.body.nombre,
     descripcion: req.body.descripcion,
     categoria: req.body.categoria,
-    precio_inicial: parseFloat(req.body.precio_inicial), // Asegurarse de que el precio sea un número
-    duracion_remate: parseInt(req.body.duracion_remate, 10), // Asegurarse de que la duración sea un número
-    imagen_url: `/uploads/${req.file.filename}`,  // Almacenar la URL de la imagen
+    precio_inicial: parseFloat(req.body.precio_inicial), // Asegúrate de que el precio sea un número
+    duracion_remate: parseInt(req.body.duracion_remate, 10), // Asegúrate de que la duración sea un número
+    imagen_url: imagen_url,  // Usar la URL de la imagen proporcionada o la imagen por defecto
   };
 
   try {
     await addProduct(product);
     logger.info(`Producto agregado: ${product.nombre} (${product.id})`);  // Registrar evento de adición de producto
-    res.status(201).json({ message: 'Producto agregado exitosamente' });
+    res.status(201).json({ message: 'Producto agregado exitosamente', product });
   } catch (error) {
     logger.error('Error al agregar el producto', { error });  // Registrar el error
     res.status(500).json({ error: 'Error al agregar el producto' });
   }
 });
 
+
 // Ruta para actualizar un producto
 router.put('/update', upload.single('imagen'), async (req, res) => {
-  const productId = req.body.id; // Obtener el ID del producto desde el cuerpo
+  const productId = req.body.id; // Obtén el ID del producto desde el cuerpo
   const productData = {
     id: productId,
     nombre: req.body.nombre,
     descripcion: req.body.descripcion,
     categoria: req.body.categoria,
-    precio_inicial: parseFloat(req.body.precio_inicial), // Asegurarse de que el precio sea un número
-    duracion_remate: parseInt(req.body.duracion_remate, 10), // Asegurarse de que la duración sea un número 
+    precio_inicial: parseFloat(req.body.precio_inicial), // Asegúrate de que el precio sea un número
+    duracion_remate: parseInt(req.body.duracion_remate, 10), // Asegúrate de que la duración sea un número
   };
 
   try {
@@ -73,13 +77,14 @@ router.put('/update', upload.single('imagen'), async (req, res) => {
 
     // Si se proporciona una nueva imagen, elimina la imagen anterior
     if (req.file) {
-      // Eliminar la imagen anterior si existe
       const oldImagePath = path.join(__dirname, '../../public', existingProduct.imagen_url.replace(/^\/+/, ''));
-      if (fs.existsSync(oldImagePath)) {
-        await fs.promises.unlink(oldImagePath); // Eliminar la imagen antigua
+
+      // Evitar eliminar la imagen por defecto
+      if (existingProduct.imagen_url !== '/images/default-image.png' && fs.existsSync(oldImagePath)) {
+        await fs.promises.unlink(oldImagePath); // Eliminar la imagen antigua solo si no es la imagen por defecto
         console.log(`Imagen anterior eliminada: ${oldImagePath}`);
       } else {
-        console.warn(`No se encontró la imagen anterior para eliminar: ${oldImagePath}`);
+        console.warn(`No se eliminó la imagen por defecto o no se encontró: ${oldImagePath}`);
       }
 
       // Guardar la nueva imagen
@@ -100,6 +105,7 @@ router.put('/update', upload.single('imagen'), async (req, res) => {
     res.status(500).json({ error: 'Error al actualizar el producto' });
   }
 });
+
 
 // Ruta para borrar un producto por ID
 router.delete('/:id', async (req, res) => {
