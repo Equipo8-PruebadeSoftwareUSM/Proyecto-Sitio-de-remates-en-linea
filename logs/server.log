@@ -356,3 +356,28 @@
 2024-10-08T02:51:15.301Z [info] : Producto actualizado: Rayo McQueen (Producto-1728354404097)
 2024-10-08T02:51:20.623Z [info] : Productos obtenidos de DynamoDB
 2024-10-08T02:51:20.625Z [info] : Productos obtenidos exitosamente
+2024-10-08T21:47:35.654Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T21:47:35.656Z [error] : Error al obtener productos
+2024-10-08T21:56:24.266Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T21:56:24.268Z [error] : Error al obtener productos
+2024-10-08T22:50:46.894Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T22:50:46.898Z [error] : Error al obtener productos
+2024-10-08T22:59:03.691Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T22:59:03.694Z [error] : Error al obtener productos
+2024-10-08T22:59:26.400Z [error] : Error al agregar el producto en DynamoDB
+2024-10-08T22:59:26.401Z [error] : Error al agregar el producto
+2024-10-09T00:38:11.328Z [info] : Productos obtenidos de DynamoDB
+2024-10-09T00:38:11.330Z [info] : Productos obtenidos exitosamente
+2024-10-10T21:27:03.279Z [info] : Server running on port 3000
+2024-10-10T21:30:43.961Z [info] : User created: user@example.com
+2024-10-10T21:31:12.512Z [error] : Error getting user by email
+2024-10-10T21:31:12.513Z [error] : Login error
+2024-10-10T21:31:26.449Z [error] : Error getting user by email
+2024-10-10T21:31:26.450Z [error] : Login error
+2024-10-10T21:32:44.148Z [error] : Error getting user by email
+2024-10-10T21:32:44.149Z [error] : Login error
+2024-10-10T21:44:41.297Z [info] : Server running on port 3000
+2024-10-10T21:44:46.726Z [error] : Error getting user by email
+2024-10-10T21:44:46.727Z [error] : Login error
+2024-10-10T21:48:23.412Z [info] : Server running on port 3000
+2024-10-10T21:48:28.419Z [info] : User logged in: user@example.com
