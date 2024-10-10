@@ -1,8 +1,14 @@
-require('dotenv').config();  // Cargar variables de entorno desde .env
+require('dotenv').config();
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
+const { 
+  DynamoDBDocumentClient, 
+  PutCommand,
+  GetCommand,
+  QueryCommand,
+  DeleteCommand
+} = require("@aws-sdk/lib-dynamodb");
 
-// Crear el cliente de DynamoDB
+// Create DynamoDB client
 const client = new DynamoDBClient({
   region: process.env.AWS_REGION,
   credentials: {
@@ -11,8 +17,24 @@ const client = new DynamoDBClient({
   },
 });
 
-// Crear el cliente documentado para facilitar las operaciones
+// Create documented client for easier operations
 const docClient = DynamoDBDocumentClient.from(client);
 
-module.exports = { client, docClient};
+// Constants for table names
+const TABLES = {
+  USERS: 'Users',
+  PRODUCTS: 'Producto'  // assuming this is your product table name
+};
 
+// JWT configuration
+const JWT_CONFIG = {
+  SECRET: process.env.JWT_SECRET || 'your-fallback-secret-key',
+  EXPIRATION: '24h'
+};
+
+module.exports = { 
+  client, 
+  docClient, 
+  TABLES,
+  JWT_CONFIG
+};

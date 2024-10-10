@@ -146,3 +146,92 @@ function removeProductFromTable(productId) {
     productRow.remove();
   }
 }
+
+let authToken = localStorage.getItem('authToken');
+let userType = localStorage.getItem('userType');
+
+async function login(email, password) {
+  try {
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Login failed');
+    }
+
+    const data = await response.json();
+    authToken = data.token;
+    userType = data.user.userType;
+    
+    localStorage.setItem('authToken', authToken);
+    localStorage.setItem('userType', userType);
+    
+    return data;
+  } catch (error) {
+    console.error('Login error:', error);
+    throw error;
+  }
+}
+
+// Update your existing fetch functions to include the auth token
+async function fetchProducts() {
+  const response = await fetch('/api/products', {
+    headers: {
+      'Authorization': `Bearer ${authToken}`
+    }
+  });
+  // ... rest of the function
+}
+
+async function addProduct(formData) {
+  const response = await fetch('/api/products/add', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${authToken}`
+    },
+    body: formData,
+  });
+  // ... rest of the function
+}
+
+// Add login form handler
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  
+  try {
+    await login(email, password);
+    // Hide login form, show product management interface
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('productContainer').style.display = 'block';
+    
+    if (userType === 'ADMIN') {
+      document.getElementById('addProductForm').style.display = 'block';
+    }
+    
+    await fetchProducts(); // Load products after successful login
+  } catch (error) {
+    alert('Login failed. Please check your credentials.');
+  }
+});
+
+// Check auth status on page load
+window.onload = function() {
+  if (!authToken) {
+    document.getElementById('loginContainer').style.display = 'block';
+    document.getElementById('productContainer').style.display = 'none';
+  } else {
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('productContainer').style.display = 'block';
+    if (userType === 'ADMIN') {
+      document.getElementById('addProductForm').style.display = 'block';
+    }
+    fetchProducts();
+  }
+};
