@@ -19,33 +19,18 @@ async function addProduct(product) {
   }
 }
 
-// Función para obtener todos los productos
 async function getProducts() {
   const params = {
     TableName: "Producto",
   };
   try {
+    logger.info('Attempting to fetch products from DynamoDB');
     const data = await docClient.send(new ScanCommand(params));
-    logger.info('Productos obtenidos de DynamoDB');  // Registrar la obtención de productos
+    logger.info(`Products fetched successfully from DynamoDB. Count: ${data.Items.length}`);
+    logger.debug('Raw DynamoDB response:', JSON.stringify(data)); // Be careful with this in production
     return data.Items;
   } catch (error) {
-    logger.error('Error al obtener los productos de DynamoDB', { error });  // Registrar error en caso de fallo
-    throw error;
-  }
-}
-
-// Función para obtener un producto por ID
-async function getProduct(productId) {
-  const params = {
-    TableName: "Producto",
-    Key: { id: productId },
-  };
-
-  try {
-    const data = await docClient.send(new GetCommand(params));
-    return data.Item;  // Retornar el producto encontrado
-  } catch (error) {
-    logger.error('Error al obtener el producto de DynamoDB', { error });  // Registrar error
+    logger.error('Error fetching products from DynamoDB', { error: error.message, stack: error.stack });
     throw error;
   }
 }
@@ -96,4 +81,4 @@ async function updateProduct(product) {
   }
 }
 
-module.exports = { addProduct, getProducts, deleteProduct, updateProduct, getProduct };
+module.exports = { addProduct, getProducts, deleteProduct, updateProduct };

@@ -21,8 +21,9 @@ const upload = multer({ storage });
 // Endpoint para obtener todos los productos
 router.get('/', authMiddleware, async (req, res) => {
   try {
+    logger.info(`Attempting to fetch products for user: ${req.user.userId}`);
     const products = await getProducts();
-    logger.info(`Products retrieved by user: ${req.user.userId}`);
+    logger.info(`Products retrieved successfully. Count: ${products.length}`);
     res.json(products);
   } catch (error) {
     logger.error('Error getting products', { error, userId: req.user.userId });

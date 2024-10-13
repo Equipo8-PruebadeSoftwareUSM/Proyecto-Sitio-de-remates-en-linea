@@ -11,8 +11,10 @@ function authMiddleware(req, res, next) {
   }
 
   try {
+    logger.info('Attempting to verify token');
     const decoded = jwt.verify(token, JWT_CONFIG.SECRET);
     req.user = decoded;
+    logger.info(`Token verified successfully for user: ${decoded.userId}`);
     next();
   } catch (error) {
     logger.error('Authentication error', { error });

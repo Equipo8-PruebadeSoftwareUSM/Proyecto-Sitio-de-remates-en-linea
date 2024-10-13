@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <form id="loginForm">
+    <input type="email" id="loginEmail" required>
+    <input type="password" id="loginPassword" required>
+    <button type="submit">Login</button>
+  </form>
 
   <div id="loginContainer">
     <h2>Iniciar Sesión</h2>
@@ -23,7 +28,8 @@
     </form>
 </div>
 
-  <div class="ProductosContainer">
+<div id="productContainer" style="display: none;">
+  <button id="logoutButton">Cerrar Sesión</button>
   <h1>Gestión de Productos</h1>
 
   <!-- Formulario para agregar o editar producto -->

@@ -71,4 +71,9 @@ router.get('/profile', authMiddleware, (req, res) => {
   res.json({ user: req.user });
 });
 
+// Logout
+router.post('/logout', authMiddleware, (req, res) => {
+  // Optional: invalidate token here
+  res.json({ message: 'Logged out successfully' });
+});
 module.exports = router;

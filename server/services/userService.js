@@ -8,6 +8,30 @@ const UserType = {
   USER: 'USER',
   ADMIN: 'ADMIN'
 };
+async function createAdminAccount(email, password) {
+  try {
+    const response = await fetch('/api/auth/create-admin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Failed to create admin account');
+    }
+
+    const data = await response.json();
+    console.log('Admin account created:', data);
+    // Handle successful admin creation (e.g., show a success message)
+  } catch (error) {
+    console.error('Error creating admin account:', error);
+    alert(error.message);
+  }
+}
 
 async function createUser(userData) {
   const hashedPassword = await bcrypt.hash(userData.password, 10);
