@@ -10,11 +10,11 @@ productForm.addEventListener('submit', async (event) => {
 
   const productId = document.getElementById('productId').value;
   if (productId) {
-    await updateProduct(formData); // Update existing product
+    await updateProduct(formData); // Make sure formData is correctly structured
   } else {
     const newId = `Producto-${Date.now()}`;
     formData.set('id', newId);
-    await addProduct(formData); // Add new product
+    await addProduct(formData);
   }
   resetForm();
 });
@@ -24,7 +24,10 @@ async function addProduct(formData) {
   try {
     const response = await fetch('/api/products/add', {
       method: 'POST',
-      body: formData
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+      },
+      body: formData,
     });
     if (!response.ok) throw new Error('Error adding product');
     const newProduct = await response.json();
@@ -39,6 +42,9 @@ async function updateProduct(formData) {
   try {
     const response = await fetch(`/api/products/update`, {
       method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+      },
       body: formData
     });
     if (!response.ok) throw new Error('Error updating product');

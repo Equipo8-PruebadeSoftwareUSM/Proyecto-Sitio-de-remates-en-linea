@@ -24,9 +24,10 @@ router.get('/', authMiddleware, async (req, res) => {
     logger.info(`Attempting to fetch products for user: ${req.user.userId}`);
     const products = await getProducts();
     logger.info(`Products retrieved successfully. Count: ${products.length}`);
+    logger.debug('Products:', JSON.stringify(products)); // Be careful with this in production
     res.json(products);
   } catch (error) {
-    logger.error('Error getting products', { error, userId: req.user.userId });
+    logger.error('Error getting products', { error: error.message, stack: error.stack, userId: req.user.userId });
     res.status(500).json({ error: 'Error getting products' });
   }
 });
@@ -49,8 +50,7 @@ router.post('/add',authMiddleware,adminMiddleware, upload.single('imagen'), asyn
   try {
     await addProduct(product);
     logger.info(`Product added by admin: ${req.user.userId}`);
-    res.status(201).json(product);
-    logger.info(`Producto agregado: ${product.nombre} (${product.id})`);  // Registrar evento de adición de producto
+    // Registrar evento de adición de producto
     res.status(201).json({ message: 'Producto agregado exitosamente', product });
   } catch (error) {
     logger.error('Error adding product', { error, userId: req.user.userId });
@@ -58,7 +58,7 @@ router.post('/add',authMiddleware,adminMiddleware, upload.single('imagen'), asyn
   }
 });
 // Ruta para actualizar un producto
-router.put('/update', upload.single('imagen'), async (req, res) => {
+router.put('/update',authMiddleware, adminMiddleware, upload.single('imagen'), async (req, res) => {
   const productId = req.body.id; // Obtén el ID del producto desde el cuerpo
   const productData = {
     id: productId,
@@ -109,7 +109,7 @@ router.put('/update', upload.single('imagen'), async (req, res) => {
 
 
 // Ruta para borrar un producto por ID
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authMiddleware, adminMiddleware, async (req, res) => {
   const productId = req.params.id;
   try {
     await deleteProduct(productId);

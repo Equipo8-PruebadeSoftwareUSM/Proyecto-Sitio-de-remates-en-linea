@@ -34,6 +34,20 @@ async function getProducts() {
     throw error;
   }
 }
+async function getProduct(productId) {
+  const params = {
+    TableName: "Producto",
+    Key: { id: productId },
+  };
+
+  try {
+    const data = await docClient.send(new GetCommand(params));
+    return data.Item;  // Retornar el producto encontrado
+  } catch (error) {
+    logger.error('Error al obtener el producto de DynamoDB', { error });  // Registrar error
+    throw error;
+  }
+}
 
 // Función para borrar un producto por ID
 async function deleteProduct(productId) {
@@ -81,4 +95,4 @@ async function updateProduct(product) {
   }
 }
 
-module.exports = { addProduct, getProducts, deleteProduct, updateProduct };
+module.exports = { addProduct, getProducts, deleteProduct, updateProduct, getProduct };
