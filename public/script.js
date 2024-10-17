@@ -16,6 +16,7 @@ productForm.addEventListener('submit', async (event) => {
     formData.set('id', newId);
     await addProduct(formData);
   }
+  fetchProducts()
   resetForm();
 });
 
@@ -80,6 +81,50 @@ async function fetchProducts() {
   }
 }
 
+function editProduct(productId) {
+  const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === productId);
+  const product = {
+    id: productRow.cells[0].innerText,
+    nombre: productRow.cells[1].innerText,
+    descripcion: productRow.cells[2].innerText,
+    categoria: productRow.cells[3].innerText,
+    precio_inicial: productRow.cells[4].innerText,
+    duracion_remate: productRow.cells[5].innerText,
+  };
+
+  // Llenar el formulario con los datos del producto
+  document.getElementById('productId').value = product.id;
+  document.getElementById('nombre').value = product.nombre;
+  document.getElementById('descripcion').value = product.descripcion;
+  document.getElementById('categoria').value = product.categoria;
+  document.getElementById('precio_inicial').value = product.precio_inicial;
+  document.getElementById('duracion_remate').value = product.duracion_remate;
+
+  // Mostrar el botón de actualización
+  updateButton.style.display = 'inline-block';
+}
+
+
+// Función para restablecer el formulario después de actualizar o agregar un producto
+function resetForm() {
+  document.getElementById('productId').value = ''; // Limpiar el campo oculto productId
+  productForm.reset(); // Restablecer el formulario
+  updateButton.style.display = 'none'; // Ocultar el botón de actualizar
+}
+
+// Función para eliminar un producto
+async function deleteProduct(productId) {
+  const response = await fetch(`/api/products/${productId}`, {headers: {
+    'Authorization': `Bearer ${authToken}`
+  },
+  method: 'DELETE'} );
+  if (response.ok) {
+    removeProductFromTable(productId); // Eliminar el producto de la tabla sin refrescar la página
+  } else {
+    console.error('Error al eliminar el producto.');
+  }
+}
+
 // Function to append a product to the table
 function appendProductToTable(product) {
   const row = document.createElement('tr');
@@ -97,6 +142,25 @@ function appendProductToTable(product) {
     </td>
   `;
   productTable.appendChild(row);
+}
+
+function updateProductInTable(product) {
+  const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === product.id);
+  if (productRow) {
+    productRow.cells[1].innerText = product.nombre;
+    productRow.cells[2].innerText = product.descripcion;
+    productRow.cells[3].innerText = product.categoria;
+    productRow.cells[4].innerText = product.precio_inicial;
+    productRow.cells[5].innerText = product.duracion_remate;
+    productRow.cells[6].innerHTML = `<img src="${product.imagen_url}" alt="${product.nombre}" width="100">`;
+  }
+}
+
+function removeProductFromTable(productId) {
+  const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === productId);
+  if (productRow) {
+    productRow.remove();
+  }
 }
 
 // Other helper functions (resetForm, updateProductInTable, removeProductFromTable) remain unchanged
