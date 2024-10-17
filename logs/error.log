@@ -15,5 +15,36 @@
 2024-10-08T00:51:09.607Z [error] : Error al actualizar el producto
 2024-10-08T01:12:32.260Z [error] : Error al actualizar el producto
 2024-10-08T01:16:27.937Z [error] : Error al actualizar el producto
+<<<<<<< HEAD
+2024-10-08T21:47:35.654Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T21:47:35.656Z [error] : Error al obtener productos
+2024-10-08T21:56:24.266Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T21:56:24.268Z [error] : Error al obtener productos
+2024-10-08T22:50:46.894Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T22:50:46.898Z [error] : Error al obtener productos
+2024-10-08T22:59:03.691Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T22:59:03.694Z [error] : Error al obtener productos
+2024-10-08T22:59:26.400Z [error] : Error al agregar el producto en DynamoDB
+2024-10-08T22:59:26.401Z [error] : Error al agregar el producto
+2024-10-10T21:31:12.512Z [error] : Error getting user by email
+2024-10-10T21:31:12.513Z [error] : Login error
+2024-10-10T21:31:26.449Z [error] : Error getting user by email
+2024-10-10T21:31:26.450Z [error] : Login error
+2024-10-10T21:32:44.148Z [error] : Error getting user by email
+2024-10-10T21:32:44.149Z [error] : Login error
+2024-10-10T21:44:46.726Z [error] : Error getting user by email
+2024-10-10T21:44:46.727Z [error] : Login error
+=======
 2024-10-08T23:57:22.013Z [error] : Error al eliminar el producto con ID Producto-1728431322639
 2024-10-08T23:57:22.014Z [error] : Error al eliminar el producto con ID Producto-1728431322639
+>>>>>>> 449d47d903d119f32b79bc4c05a103a291dc1814
+2024-10-13T20:54:22.715Z [error] : Authentication error
+2024-10-13T20:58:58.565Z [error] : Authentication error
+2024-10-13T21:04:59.473Z [error] : Authentication error
+2024-10-13T21:07:39.309Z [error] : Authentication error
+2024-10-13T21:14:04.582Z [error] : Authentication error
+2024-10-13T21:14:18.423Z [error] : Authentication error
+2024-10-13T21:16:07.688Z [error] : Authentication error
+2024-10-13T21:53:15.036Z [error] : Error adding product
+2024-10-17T15:50:59.162Z [error] : Authentication error
+2024-10-17T16:06:26.332Z [error] : Login error

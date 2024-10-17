@@ -1,72 +1,86 @@
 const productForm = document.getElementById('productForm');
 const productTable = document.querySelector('#productTable tbody');
 const updateButton = document.getElementById('updateButton');
+let authToken = localStorage.getItem('authToken');
 
-// Cargar productos al cargar la página
-window.onload = fetchProducts;
-
-// Agregar producto al enviar el formulario
+// Add product on form submit
 productForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const formData = new FormData(productForm); // Crea un FormData para enviar los datos del formulario
+  const formData = new FormData(productForm);
 
   const productId = document.getElementById('productId').value;
   if (productId) {
-    // Si hay un ID, se actualizará el producto existente
-    await updateProduct(formData);
-    resetForm();
+    await updateProduct(formData); // Make sure formData is correctly structured
   } else {
-    // Si no hay ID, se agregará un nuevo producto
-    const newId = `Producto-${Date.now()}`; // Genera un ID único
-    formData.set('id', newId); // Asegúrate de que el ID sea un string
+    const newId = `Producto-${Date.now()}`;
+    formData.set('id', newId);
     await addProduct(formData);
   }
+  fetchProducts()
+  resetForm();
 });
 
-// Función para agregar un producto
+// Function to add a product
 async function addProduct(formData) {
-  const response = await fetch('/api/products/add', {
-    method: 'POST',
-    body: formData, // Envío de FormData que incluye el archivo
-  });
-
-  if (response.ok) {
-    const newProduct = await response.json(); // Obtener el nuevo producto agregado
-    appendProductToTable(newProduct); // Actualizar la tabla dinámicamente
-  } else {
-    const errorData = await response.json(); // Obtiene el mensaje de error
-    console.error('Error al agregar el producto:', errorData);
+  try {
+    const response = await fetch('/api/products/add', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+      },
+      body: formData,
+    });
+    if (!response.ok) throw new Error('Error adding product');
+    const newProduct = await response.json();
+    appendProductToTable(newProduct);
+  } catch (error) {
+    console.error('Error adding product:', error);
   }
 }
 
-// Función para actualizar un producto
+// Function to update a product
 async function updateProduct(formData) {
-  const response = await fetch(`/api/products/update`, {
-    method: 'PUT',
-    body: formData, // Envío de FormData que incluye el archivo
-  });
-
-  if (response.ok) {
-    const updatedProduct = await response.json(); // Obtener el producto actualizado
-    updateProductInTable(updatedProduct); // Actualizar la tabla dinámicamente
-  } else {
-    const errorData = await response.json(); // Obtiene el mensaje de error
-    console.error('Error al actualizar el producto:', errorData);
+  try {
+    const response = await fetch(`/api/products/update`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+      },
+      body: formData
+    });
+    if (!response.ok) throw new Error('Error updating product');
+    const updatedProduct = await response.json();
+    updateProductInTable(updatedProduct);
+  } catch (error) {
+    console.error('Error updating product:', error);
   }
 }
 
-// Obtener y mostrar productos
+// Function to fetch products
 async function fetchProducts() {
-  const response = await fetch('/api/products');
-  const products = await response.json();
-  productTable.innerHTML = ''; // Limpiar la tabla
+  try {
+    const response = await fetch('/api/products', {
+      headers: {
+        'Authorization': `Bearer ${authToken}`
+      }
+    });
 
-  products.forEach(product => {
-    appendProductToTable(product); // Llenar la tabla con los productos
-  });
+    if (!response.ok) throw new Error(`Error fetching products: ${response.status}`);
+
+    const products = await response.json();
+    if (!products.length) {
+      console.log('No products found');
+      return;
+    }
+    
+    productTable.innerHTML = ''; // Clear table
+    products.forEach(product => appendProductToTable(product));
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    alert('Failed to load products. Please check the console for more details.');
+  }
 }
 
-// Función para llenar el formulario con los datos del producto seleccionado para editar
 function editProduct(productId) {
   const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === productId);
   const product = {
@@ -90,6 +104,7 @@ function editProduct(productId) {
   updateButton.style.display = 'inline-block';
 }
 
+
 // Función para restablecer el formulario después de actualizar o agregar un producto
 function resetForm() {
   document.getElementById('productId').value = ''; // Limpiar el campo oculto productId
@@ -99,7 +114,10 @@ function resetForm() {
 
 // Función para eliminar un producto
 async function deleteProduct(productId) {
-  const response = await fetch(`/api/products/${productId}`, { method: 'DELETE' });
+  const response = await fetch(`/api/products/${productId}`, {headers: {
+    'Authorization': `Bearer ${authToken}`
+  },
+  method: 'DELETE'} );
   if (response.ok) {
     removeProductFromTable(productId); // Eliminar el producto de la tabla sin refrescar la página
   } else {
@@ -107,7 +125,7 @@ async function deleteProduct(productId) {
   }
 }
 
-// Función para agregar un producto nuevo a la tabla
+// Function to append a product to the table
 function appendProductToTable(product) {
   const row = document.createElement('tr');
   row.innerHTML = `
@@ -126,7 +144,6 @@ function appendProductToTable(product) {
   productTable.appendChild(row);
 }
 
-// Función para actualizar un producto en la tabla
 function updateProductInTable(product) {
   const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === product.id);
   if (productRow) {
@@ -139,10 +156,60 @@ function updateProductInTable(product) {
   }
 }
 
-// Función para eliminar un producto de la tabla
 function removeProductFromTable(productId) {
   const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === productId);
   if (productRow) {
     productRow.remove();
   }
 }
+
+// Other helper functions (resetForm, updateProductInTable, removeProductFromTable) remain unchanged
+
+// Login functionality
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+
+  try {
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    if (!response.ok) throw new Error('Login failed');
+    
+    const data = await response.json();
+    authToken = data.token;
+    localStorage.setItem('authToken', authToken);
+    
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('productContainer').style.display = 'block';
+    fetchProducts();
+  } catch (error) {
+    console.error('Login error:', error);
+    alert('Login failed. Please check your credentials.');
+  }
+});
+
+// Logout functionality
+function logout() {
+  localStorage.removeItem('authToken');
+  authToken = null;
+  document.getElementById('loginContainer').style.display = 'block';
+  document.getElementById('productContainer').style.display = 'none';
+}
+
+// Logout button listener
+document.getElementById('logoutButton').addEventListener('click', logout);
+
+// On page load, check if token exists
+window.addEventListener('load', () => {
+  if (authToken) {
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('productContainer').style.display = 'block';
+    fetchProducts();
+  }
+});

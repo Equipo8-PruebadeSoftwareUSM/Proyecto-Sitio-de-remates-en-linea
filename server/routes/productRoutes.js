@@ -1,10 +1,10 @@
 const express = require('express');
 const { addProduct, getProducts, deleteProduct, updateProduct, getProduct } = require('../services/productService');
+const { authMiddleware, adminMiddleware } = require('../middleware/authMiddleware');
 const router = express.Router();
-const logger = require('../logger');  // Importar el logger
-const multer = require('multer');  // Importar Multer
+const logger = require('../logger');
+const multer = require('multer');
 const path = require('path');
-const fs = require('fs'); // Importar el módulo de sistema de archivos
 
 // Configuración de Multer
 const storage = multer.diskStorage({
@@ -19,19 +19,21 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Endpoint para obtener todos los productos
-router.get('/', async (req, res) => {
+router.get('/', authMiddleware, async (req, res) => {
   try {
+    logger.info(`Attempting to fetch products for user: ${req.user.userId}`);
     const products = await getProducts();
-    logger.info('Productos obtenidos exitosamente');  // Registrar evento de obtención de productos
+    logger.info(`Products retrieved successfully. Count: ${products.length}`);
+    logger.debug('Products:', JSON.stringify(products)); // Be careful with this in production
     res.json(products);
   } catch (error) {
-    logger.error('Error al obtener productos', { error });  // Registrar el error
-    res.status(500).json({ error: 'Error al obtener los productos' });
+    logger.error('Error getting products', { error: error.message, stack: error.stack, userId: req.user.userId });
+    res.status(500).json({ error: 'Error getting products' });
   }
 });
 
 // Endpoint para agregar un producto
-router.post('/add', upload.single('imagen'), async (req, res) => {
+router.post('/add',authMiddleware,adminMiddleware, upload.single('imagen'), async (req, res) => {
   // Verificar si se proporcionó una imagen, de lo contrario, usar la imagen por defecto
   const imagen_url = req.file ? `/uploads/${req.file.filename}` : '/images/default-image.png';
 
@@ -47,17 +49,16 @@ router.post('/add', upload.single('imagen'), async (req, res) => {
 
   try {
     await addProduct(product);
-    logger.info(`Producto agregado: ${product.nombre} (${product.id})`);  // Registrar evento de adición de producto
+    logger.info(`Product added by admin: ${req.user.userId}`);
+    // Registrar evento de adición de producto
     res.status(201).json({ message: 'Producto agregado exitosamente', product });
   } catch (error) {
-    logger.error('Error al agregar el producto', { error });  // Registrar el error
-    res.status(500).json({ error: 'Error al agregar el producto' });
+    logger.error('Error adding product', { error, userId: req.user.userId });
+    res.status(500).json({ error: 'Error adding product' });
   }
 });
-
-
 // Ruta para actualizar un producto
-router.put('/update', upload.single('imagen'), async (req, res) => {
+router.put('/update',authMiddleware, adminMiddleware, upload.single('imagen'), async (req, res) => {
   const productId = req.body.id; // Obtén el ID del producto desde el cuerpo
   const productData = {
     id: productId,
@@ -108,7 +109,7 @@ router.put('/update', upload.single('imagen'), async (req, res) => {
 
 
 // Ruta para borrar un producto por ID
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authMiddleware, adminMiddleware, async (req, res) => {
   const productId = req.params.id;
   try {
     await deleteProduct(productId);

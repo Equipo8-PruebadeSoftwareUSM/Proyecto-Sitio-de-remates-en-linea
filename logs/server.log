@@ -356,6 +356,33 @@
 2024-10-08T02:51:15.301Z [info] : Producto actualizado: Rayo McQueen (Producto-1728354404097)
 2024-10-08T02:51:20.623Z [info] : Productos obtenidos de DynamoDB
 2024-10-08T02:51:20.625Z [info] : Productos obtenidos exitosamente
+<<<<<<< HEAD
+2024-10-08T21:47:35.654Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T21:47:35.656Z [error] : Error al obtener productos
+2024-10-08T21:56:24.266Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T21:56:24.268Z [error] : Error al obtener productos
+2024-10-08T22:50:46.894Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T22:50:46.898Z [error] : Error al obtener productos
+2024-10-08T22:59:03.691Z [error] : Error al obtener los productos de DynamoDB
+2024-10-08T22:59:03.694Z [error] : Error al obtener productos
+2024-10-08T22:59:26.400Z [error] : Error al agregar el producto en DynamoDB
+2024-10-08T22:59:26.401Z [error] : Error al agregar el producto
+2024-10-09T00:38:11.328Z [info] : Productos obtenidos de DynamoDB
+2024-10-09T00:38:11.330Z [info] : Productos obtenidos exitosamente
+2024-10-10T21:27:03.279Z [info] : Server running on port 3000
+2024-10-10T21:30:43.961Z [info] : User created: user@example.com
+2024-10-10T21:31:12.512Z [error] : Error getting user by email
+2024-10-10T21:31:12.513Z [error] : Login error
+2024-10-10T21:31:26.449Z [error] : Error getting user by email
+2024-10-10T21:31:26.450Z [error] : Login error
+2024-10-10T21:32:44.148Z [error] : Error getting user by email
+2024-10-10T21:32:44.149Z [error] : Login error
+2024-10-10T21:44:41.297Z [info] : Server running on port 3000
+2024-10-10T21:44:46.726Z [error] : Error getting user by email
+2024-10-10T21:44:46.727Z [error] : Login error
+2024-10-10T21:48:23.412Z [info] : Server running on port 3000
+2024-10-10T21:48:28.419Z [info] : User logged in: user@example.com
+=======
 2024-10-08T23:57:16.797Z [info] : Productos obtenidos de DynamoDB
 2024-10-08T23:57:16.800Z [info] : Productos obtenidos exitosamente
 2024-10-08T23:57:22.013Z [error] : Error al eliminar el producto con ID Producto-1728431322639
@@ -390,3 +417,268 @@
 2024-10-09T00:02:57.582Z [info] : Producto actualizado: random 2.0 (Producto-1728432127270)
 2024-10-09T00:03:11.724Z [info] : Productos obtenidos de DynamoDB
 2024-10-09T00:03:11.724Z [info] : Productos obtenidos exitosamente
+>>>>>>> 449d47d903d119f32b79bc4c05a103a291dc1814
+2024-10-13T18:48:50.710Z [info] : Server running on port 3000
+2024-10-13T18:49:31.129Z [info] : User logged in: user@example.com
+2024-10-13T18:52:46.244Z [info] : Server running on port 3000
+2024-10-13T18:53:16.930Z [warn] : Unauthorized admin access attempt by user: user_1728595843685
+2024-10-13T18:56:22.122Z [warn] : Authentication attempt without token
+2024-10-13T20:53:07.935Z [info] : Server running on port 3000
+2024-10-13T20:53:11.635Z [warn] : Authentication attempt without token
+2024-10-13T20:54:22.715Z [error] : Authentication error
+2024-10-13T20:58:58.565Z [error] : Authentication error
+2024-10-13T21:04:11.475Z [info] : Server running on port 3000
+2024-10-13T21:04:28.990Z [info] : User logged in: user@example.com
+2024-10-13T21:04:29.071Z [info] : User logged in: user@example.com
+2024-10-13T21:04:59.473Z [error] : Authentication error
+2024-10-13T21:07:39.309Z [error] : Authentication error
+2024-10-13T21:13:48.625Z [info] : Server running on port 3000
+2024-10-13T21:14:04.582Z [error] : Authentication error
+2024-10-13T21:14:18.423Z [error] : Authentication error
+2024-10-13T21:16:07.688Z [error] : Authentication error
+2024-10-13T21:18:41.979Z [warn] : Unauthorized admin access attempt by user: user_1728595843685
+2024-10-13T21:27:51.592Z [info] : Server running on port 3000
+2024-10-13T21:28:01.687Z [info] : User logged in: user@example.com
+2024-10-13T21:28:50.037Z [info] : User logged in: user@example.com
+2024-10-13T21:28:50.298Z [info] : User logged in: user@example.com
+2024-10-13T21:51:39.714Z [info] : Server running on port 3000
+2024-10-13T21:52:00.508Z [info] : User logged in: user@example.com
+2024-10-13T21:52:00.659Z [info] : User logged in: user@example.com
+2024-10-13T21:52:00.660Z [info] : User logged in: user@example.com
+2024-10-13T21:53:15.033Z [info] : Producto añadido a DynamoDB: lapiz (Producto-1728856394958)
+2024-10-13T21:55:12.535Z [info] : Server running on port 3000
+2024-10-13T21:55:21.367Z [info] : User logged in: user@example.com
+2024-10-13T21:55:40.512Z [info] : User created: admin@example.com
+2024-10-13T21:57:42.511Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T21:57:42.711Z [info] : Productos obtenidos de DynamoDB
+2024-10-13T21:57:42.711Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:03:32.253Z [info] : Server running on port 3000
+2024-10-13T22:03:44.445Z [info] : User logged in: user@example.com
+2024-10-13T22:03:44.594Z [info] : User logged in: user@example.com
+2024-10-13T22:03:44.595Z [info] : User logged in: user@example.com
+2024-10-13T22:04:32.870Z [info] : User logged in: user@example.com
+2024-10-13T22:04:33.023Z [info] : User logged in: user@example.com
+2024-10-13T22:04:33.025Z [info] : User logged in: user@example.com
+2024-10-13T22:11:53.998Z [info] : Server running on port 3000
+2024-10-13T22:12:01.684Z [info] : Attempting to verify token
+2024-10-13T22:12:01.691Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:12:01.691Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:12:01.691Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:12:01.955Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:12:01.956Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:12:21.387Z [info] : User logged in: user@example.com
+2024-10-13T22:12:21.393Z [info] : Attempting to verify token
+2024-10-13T22:12:21.395Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:12:21.395Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:12:21.396Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:12:21.455Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:12:21.456Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:12:21.589Z [info] : User logged in: user@example.com
+2024-10-13T22:12:22.883Z [info] : Attempting to verify token
+2024-10-13T22:12:22.885Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:12:22.885Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:12:22.885Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:12:22.944Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:12:22.944Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:13:47.421Z [info] : Attempting to verify token
+2024-10-13T22:13:47.422Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:13:47.422Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:13:47.423Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:13:47.634Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:13:47.635Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:18:56.438Z [info] : Server running on port 3000
+2024-10-13T22:19:00.035Z [info] : Attempting to verify token
+2024-10-13T22:19:00.039Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:19:00.040Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:19:00.040Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:19:00.306Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:19:00.307Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:19:23.340Z [info] : User logged in: user@example.com
+2024-10-13T22:19:23.344Z [info] : Attempting to verify token
+2024-10-13T22:19:23.345Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:19:23.345Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:19:23.346Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:19:23.406Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:19:23.406Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:25:15.463Z [info] : Server running on port 3000
+2024-10-13T22:25:55.458Z [info] : User logged in: user@example.com
+2024-10-13T22:25:55.463Z [info] : Attempting to verify token
+2024-10-13T22:25:55.465Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:25:55.466Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:25:55.466Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:25:55.528Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:25:55.529Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:26:15.143Z [warn] : Authentication attempt without token
+2024-10-13T22:26:33.382Z [warn] : Authentication attempt without token
+2024-10-13T22:28:44.274Z [warn] : Authentication attempt without token
+2024-10-13T22:32:15.948Z [info] : Attempting to verify token
+2024-10-13T22:32:15.951Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:32:15.951Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:32:15.951Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:32:16.148Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:32:16.149Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:32:38.432Z [warn] : Authentication attempt without token
+2024-10-13T22:33:55.407Z [info] : User logged in: user@example.com
+2024-10-13T22:33:55.411Z [info] : Attempting to verify token
+2024-10-13T22:33:55.412Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:33:55.412Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:33:55.413Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:33:55.471Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:33:55.471Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:43:33.095Z [info] : Server running on port 3000
+2024-10-13T22:43:36.151Z [info] : Attempting to verify token
+2024-10-13T22:43:36.155Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:43:36.156Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:43:36.156Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:43:36.477Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:43:36.478Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:43:45.701Z [info] : User logged in: user@example.com
+2024-10-13T22:43:45.705Z [info] : Attempting to verify token
+2024-10-13T22:43:45.706Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:43:45.707Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:43:45.707Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:43:45.766Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:43:45.767Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:43:54.691Z [info] : User logged in: user@example.com
+2024-10-13T22:43:54.694Z [info] : Attempting to verify token
+2024-10-13T22:43:54.695Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:43:54.696Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:43:54.696Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:43:54.759Z [info] : Products fetched successfully from DynamoDB. Count: 9
+2024-10-13T22:43:54.760Z [info] : Products retrieved successfully. Count: 9
+2024-10-13T22:44:10.415Z [info] : Attempting to verify token
+2024-10-13T22:44:10.416Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:44:10.483Z [info] : Producto añadido a DynamoDB: lapiz 2 (Producto-1728859450412)
+2024-10-13T22:44:10.483Z [info] : Product added by admin: user_1728595843685
+2024-10-13T22:44:24.769Z [info] : Attempting to verify token
+2024-10-13T22:44:24.771Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-13T22:44:24.771Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-13T22:44:24.771Z [info] : Attempting to fetch products from DynamoDB
+2024-10-13T22:44:24.832Z [info] : Products fetched successfully from DynamoDB. Count: 10
+2024-10-13T22:44:24.832Z [info] : Products retrieved successfully. Count: 10
+2024-10-17T15:50:54.220Z [info] : Server running on port 3000
+2024-10-17T15:50:59.157Z [info] : Attempting to verify token
+2024-10-17T15:50:59.162Z [error] : Authentication error
+2024-10-17T15:51:11.515Z [info] : User logged in: user@example.com
+2024-10-17T15:51:11.519Z [info] : Attempting to verify token
+2024-10-17T15:51:11.521Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T15:51:11.521Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T15:51:11.522Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T15:51:11.588Z [info] : Products fetched successfully from DynamoDB. Count: 10
+2024-10-17T15:51:11.588Z [info] : Products retrieved successfully. Count: 10
+2024-10-17T16:06:11.315Z [info] : Server running on port 3000
+2024-10-17T16:06:14.849Z [info] : Attempting to verify token
+2024-10-17T16:06:14.854Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:06:14.854Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:06:14.855Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:06:15.174Z [info] : Products fetched successfully from DynamoDB. Count: 10
+2024-10-17T16:06:15.175Z [info] : Products retrieved successfully. Count: 10
+2024-10-17T16:06:26.332Z [error] : Login error
+2024-10-17T16:06:33.922Z [info] : User logged in: user@example.com
+2024-10-17T16:06:33.925Z [info] : Attempting to verify token
+2024-10-17T16:06:33.927Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:06:33.927Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:06:33.928Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:06:33.990Z [info] : Products fetched successfully from DynamoDB. Count: 10
+2024-10-17T16:06:33.991Z [info] : Products retrieved successfully. Count: 10
+2024-10-17T16:06:48.279Z [info] : Attempting to verify token
+2024-10-17T16:06:48.280Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:06:48.408Z [info] : Producto actualizado en DynamoDB: random 2.0 (Producto-1728432127270)
+2024-10-17T16:06:48.409Z [info] : Producto actualizado: random 2.0 (Producto-1728432127270)
+2024-10-17T16:06:55.695Z [info] : Attempting to verify token
+2024-10-17T16:06:55.697Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:06:55.697Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:06:55.697Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:06:55.757Z [info] : Products fetched successfully from DynamoDB. Count: 10
+2024-10-17T16:06:55.757Z [info] : Products retrieved successfully. Count: 10
+2024-10-17T16:08:06.983Z [info] : Attempting to verify token
+2024-10-17T16:08:06.984Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:08:07.108Z [info] : Producto actualizado en DynamoDB: lapiz (Producto-1728856394958)
+2024-10-17T16:08:07.109Z [info] : Producto actualizado: lapiz (Producto-1728856394958)
+2024-10-17T16:08:13.607Z [info] : Attempting to verify token
+2024-10-17T16:08:13.608Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:08:13.608Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:08:13.609Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:08:13.671Z [info] : Products fetched successfully from DynamoDB. Count: 10
+2024-10-17T16:08:13.672Z [info] : Products retrieved successfully. Count: 10
+2024-10-17T16:08:30.211Z [info] : Attempting to verify token
+2024-10-17T16:08:30.212Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:08:30.278Z [info] : Producto añadido a DynamoDB: testing (Producto-1729181310208)
+2024-10-17T16:08:30.278Z [info] : Product added by admin: user_1728595843685
+2024-10-17T16:08:35.358Z [info] : Attempting to verify token
+2024-10-17T16:08:35.360Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:08:35.360Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:08:35.360Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:08:35.421Z [info] : Products fetched successfully from DynamoDB. Count: 11
+2024-10-17T16:08:35.422Z [info] : Products retrieved successfully. Count: 11
+2024-10-17T16:09:03.316Z [warn] : Authentication attempt without token
+2024-10-17T16:09:13.752Z [info] : Attempting to verify token
+2024-10-17T16:09:13.754Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:09:13.754Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:09:13.754Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:09:13.816Z [info] : Products fetched successfully from DynamoDB. Count: 11
+2024-10-17T16:09:13.816Z [info] : Products retrieved successfully. Count: 11
+2024-10-17T16:09:19.625Z [warn] : Authentication attempt without token
+2024-10-17T16:11:41.342Z [info] : Server running on port 3000
+2024-10-17T16:11:43.290Z [info] : Attempting to verify token
+2024-10-17T16:11:43.294Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:11:43.295Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:11:43.295Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:11:43.572Z [info] : Products fetched successfully from DynamoDB. Count: 11
+2024-10-17T16:11:43.573Z [info] : Products retrieved successfully. Count: 11
+2024-10-17T16:11:44.962Z [info] : Attempting to verify token
+2024-10-17T16:11:44.964Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:11:44.964Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:11:44.964Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:11:45.028Z [info] : Products fetched successfully from DynamoDB. Count: 11
+2024-10-17T16:11:45.028Z [info] : Products retrieved successfully. Count: 11
+2024-10-17T16:11:58.557Z [info] : User logged in: user@example.com
+2024-10-17T16:11:58.561Z [info] : Attempting to verify token
+2024-10-17T16:11:58.563Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:11:58.563Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:11:58.564Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:11:58.625Z [info] : Products fetched successfully from DynamoDB. Count: 11
+2024-10-17T16:11:58.625Z [info] : Products retrieved successfully. Count: 11
+2024-10-17T16:12:05.731Z [info] : Attempting to verify token
+2024-10-17T16:12:05.732Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:12:05.856Z [info] : Producto eliminado de DynamoDB: ID Producto-1728685529609
+2024-10-17T16:12:05.857Z [info] : Producto eliminado: ID Producto-1728685529609
+2024-10-17T16:12:20.650Z [info] : Attempting to verify token
+2024-10-17T16:12:20.651Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:12:20.774Z [info] : Producto eliminado de DynamoDB: ID Producto-1728859450412
+2024-10-17T16:12:20.775Z [info] : Producto eliminado: ID Producto-1728859450412
+2024-10-17T16:12:23.885Z [info] : Attempting to verify token
+2024-10-17T16:12:23.887Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:12:24.014Z [info] : Producto eliminado de DynamoDB: ID Producto-1728856394958
+2024-10-17T16:12:24.014Z [info] : Producto eliminado: ID Producto-1728856394958
+2024-10-17T16:12:26.325Z [info] : Attempting to verify token
+2024-10-17T16:12:26.326Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:12:26.451Z [info] : Producto eliminado de DynamoDB: ID Producto-1729181310208
+2024-10-17T16:12:26.451Z [info] : Producto eliminado: ID Producto-1729181310208
+2024-10-17T16:12:33.125Z [info] : Attempting to verify token
+2024-10-17T16:12:33.127Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:12:33.249Z [info] : Producto eliminado de DynamoDB: ID Producto-1728532062294
+2024-10-17T16:12:33.250Z [info] : Producto eliminado: ID Producto-1728532062294
+2024-10-17T16:12:35.443Z [info] : Attempting to verify token
+2024-10-17T16:12:35.447Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:12:35.447Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:12:35.449Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:12:35.512Z [info] : Products fetched successfully from DynamoDB. Count: 6
+2024-10-17T16:12:35.513Z [info] : Products retrieved successfully. Count: 6
+2024-10-17T16:14:44.134Z [info] : Server running on port 3000
+2024-10-17T16:14:46.037Z [info] : Attempting to verify token
+2024-10-17T16:14:46.042Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:14:46.042Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:14:46.043Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:14:46.330Z [info] : Products fetched successfully from DynamoDB. Count: 6
+2024-10-17T16:14:46.331Z [info] : Products retrieved successfully. Count: 6
+2024-10-17T16:14:57.851Z [info] : Attempting to verify token
+2024-10-17T16:14:57.852Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:14:57.989Z [info] : Producto actualizado en DynamoDB: random 2.0 (Producto-1728432127270)
+2024-10-17T16:14:57.989Z [info] : Producto actualizado: random 2.0 (Producto-1728432127270)
+2024-10-17T16:14:57.992Z [info] : Attempting to verify token
+2024-10-17T16:14:57.994Z [info] : Token verified successfully for user: user_1728595843685
+2024-10-17T16:14:57.994Z [info] : Attempting to fetch products for user: user_1728595843685
+2024-10-17T16:14:57.994Z [info] : Attempting to fetch products from DynamoDB
+2024-10-17T16:14:58.060Z [info] : Products fetched successfully from DynamoDB. Count: 6
+2024-10-17T16:14:58.061Z [info] : Products retrieved successfully. Count: 6
