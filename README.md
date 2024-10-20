@@ -15,6 +15,10 @@ npm -v
 ```
 
 2. Installar dependencias
+```
+npm install jsonwebtoken
+npm install bcryptjs
+```
 
 3. Ejecutar servidor
 ```
@@ -23,11 +27,11 @@ node server/server.js
 
 luego ir a localhost
 ```
-http://localhost:8002
+http://localhost:3000
 ```
 
 ### Installar dependencias
-1. Instalé el SDK de AWS y se creo la carpeta 'node_modules'
+1. Instalar el SDK de AWS y se crea la carpeta 'node_modules'
 ```
 npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb multer winston dotenv 
 
@@ -68,16 +72,19 @@ Default output format [None]: json
 ├── package-lock.json
 ├── package.json
 ├── public --------------- (interfaz web)
-│   ├── index.html
 │   ├── images
+│   ├── uploads
+│   ├── index.html
 │   ├── script.js
 │   └── styles.css
 └── server --------------- (backend)
     ├── config
-    ├── logger.js
+    ├── middleware
     ├── routes
-    ├── server.js
     └── services
+    ├── logger.js
+    ├── server.js
+├── .env
 
 ```
 
