@@ -200,6 +200,7 @@ function logout() {
   localStorage.removeItem('authToken');
   authToken = null;
   document.getElementById('loginContainer').style.display = 'block';
+  //document.getElementById('loginForm').style.display = 'block';
   document.getElementById('productContainer').style.display = 'none';
 }
 
