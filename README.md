@@ -1,10 +1,13 @@
 # Equipo 8 Proyecto-Sitio-de-remates-en-linea
 Proyecto para ramo Prueba de Software de la Universidad Federico Santa Maria.
 
-Herramienta de testing: Mocha(Chai)
-Tecnologías a usar en el proyecto: ReactJS (Front-end) + NodeJS(Back-end) + AWS
+* Herramienta de testing: ~~Mocha(Chai)~~ Jest
+* Tecnologías a usar en el proyecto: ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 
-## Instrucciones
+Video autoexplicativo del trabajo realizado: [Link Video](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
+
+Desarrollo de Documentación: [Link Documentación]()
+## Instrucciones de instalación
 
 1. Verificar si esta instalado npm y node
 ```
@@ -14,7 +17,7 @@ node -v
 npm -v
 ```
 
-2. Installar dependencias
+2. Acceder a la carpeta clonada e installar dependencias
 ```
 npm install jsonwebtoken
 npm install bcryptjs
@@ -26,12 +29,12 @@ npm install jest supertest
 node server/server.js
 ```
 
-luego ir a localhost
+4. Finalmente ir a localhost y probar la aplicación
 ```
 http://localhost:3000
 ```
 
-### Installar dependencias
+## Instalar dependencias
 1. Instalar el SDK de AWS y se crea la carpeta 'node_modules'
 ```
 npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb multer winston dotenv 
@@ -45,7 +48,7 @@ npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb m
 - *winston*: para logs
 - multer: manejo de archivos en imagenes 
 
-
+---
 ### Configuración local de AWS (no es necesaria hacerla, estamos ocupando el .env)
 1. Configurar credenciales en AWS CLI (no es necesario, porque se tiene el .env)
 ```
@@ -60,7 +63,7 @@ Default region name [None]: sa-east-1
 Default output format [None]: json
 ```
 
-## Estructura del Prouyecto
+## Estructura del Proyecto
 
 ```
 .
@@ -88,14 +91,11 @@ Default output format [None]: json
 ├── .env
 
 ```
-
 ## Links
 
 (link de 'AWS DynamoDB for javascript')[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/programming-with-javascript.html]
 (Operaciones dentro de AWSDynamoBd)[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/workbench.querybuilder.operationbuilder.api.html#workbench.querybuilder.operationbuilder.Put]
 (link Azure)[https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode]
-
-
 
 ## Autores
 - Diego Veas
