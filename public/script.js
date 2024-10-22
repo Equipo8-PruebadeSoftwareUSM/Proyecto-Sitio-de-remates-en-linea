@@ -1,7 +1,9 @@
+
 const productForm = document.getElementById('productForm');
 const productTable = document.querySelector('#productTable tbody');
 const updateButton = document.getElementById('updateButton');
 let authToken = localStorage.getItem('authToken');
+
 
 // Add product on form submit
 productForm.addEventListener('submit', async (event) => {
@@ -186,6 +188,8 @@ loginForm.addEventListener('submit', async (event) => {
     localStorage.setItem('authToken', authToken);
     
     document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'none'; //Si se incluye esto lanza un mensaje de brecha de seguridad
+    // document.getElementById('logo').style.display = 'none'; //Si se incluye esto lanza un mensaje de brecha de seguridad
     document.getElementById('productContainer').style.display = 'block';
     fetchProducts();
   } catch (error) {
@@ -199,6 +203,8 @@ function logout() {
   localStorage.removeItem('authToken');
   authToken = null;
   document.getElementById('loginContainer').style.display = 'block';
+  document.getElementById('loginForm').style.display = 'block';
+  // document.getElementById('logo').style.display = 'block';
   document.getElementById('productContainer').style.display = 'none';
 }
 
@@ -213,3 +219,63 @@ window.addEventListener('load', () => {
     fetchProducts();
   }
 });
+
+//---------------------------------------------------------
+
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const clearButton = document.getElementById('clearButton');
+const tableRows = document.querySelectorAll('#productTable tbody tr');
+
+// Evento para buscar producto
+searchButton.addEventListener('click', filterTable);
+
+// Evento para cancelar la búsqueda
+clearButton.addEventListener('click', clearSearch);
+
+/* 
+Filter Table:
+--> Recibe la palabra ingresada y convierte todo a minusculas
+    para realizar una busqueda más efectiva, luego de eso 
+    "oculta" aquellos productos que no tengan contenido similar al buscado
+*/
+function filterTable() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  const tableRows = document.querySelectorAll('#productTable tbody tr');
+
+  tableRows.forEach(row => {
+    const nombreCell = row.querySelector('td:nth-child(2)'); 
+    // Indice para buscar según los nombres de los productos
+    
+    if (nombreCell) {
+      const nombreText = nombreCell.textContent.trim().toLowerCase();
+      
+      if (nombreText.includes(searchTerm)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+
+    }
+  });
+}
+
+
+/*
+Clear Search:
+--> Cancela la búsqueda realizada para volver
+    a mostrar todas las filas de productos
+    ...
+    más o menos hace lo mismo que la función
+    anterior, pero con una palabra "vacia"
+*/
+ function clearSearch() {
+  searchInput.value = '';
+  const tableRows = document.querySelectorAll('#productTable tbody tr');
+  tableRows.forEach(row => {
+      row.style.display = '';
+  });
+  
+}
+
+//---------------------------------------------------------

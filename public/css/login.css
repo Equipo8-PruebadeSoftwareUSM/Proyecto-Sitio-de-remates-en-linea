@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+body{
+    font-family: 'Popins', sans-serif;
+    /* background: #ececec; */
+    background: #ffff;
+}
+/*------------ Login container ------------*/
+.box-area{
+    width: 930px;
+}
+
+
+
+.forgot a{
+    color: #6C757D;
+}
+
+/*------------ Right box ------------*/
+.left-box{
+    /* background: #85C1E9; */
+    /* background: #5DADE2 ; */
+    background: #a76f3c;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+.left-box p{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+.left-box small{
+    width: 17rem;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+.right-box p{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 17px;
+}
+/*------------ For small screens------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+.divider-content-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #999;
+}
+.divider{
+    margin: 2rem 0;
+}
+
+::placeholder{
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 768px){
+    .box-area{
+        margin: 0 10px;
+    }
+    .left-box{
+        height: 100px;
+        overflow: hidden;
+    }
+    .right-box{
+        padding: 20px;
+    }
+    .ocultar-1{
+        display: block;  
+    }
+    .ocultar-2{
+        display: none !important;
+    }
+    .left-box{
+        /* background: #85C1E9; */
+        /* background: #FFF; */
+        background: #a76f3c;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .ocultar-1{
+        display: none !important;
+    }
+    .ocultar-2{
+        display: block;  
+    }
+}
