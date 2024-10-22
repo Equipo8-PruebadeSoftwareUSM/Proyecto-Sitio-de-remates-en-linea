@@ -56,9 +56,7 @@ Se utilizó una estrategia iterativa en el desarrollo del programa. A medida que
 La persona encargada de desarrollar el código que implementara la nueva HU, era quien realizaba pruebas manuales para demostrar su correcto funcionamiento. Luego de que estos cambios fueran subidos en Git, el resto del grupo podia realizar las mismas pruebas para ver que todo se ejecutara como correspondiera, y asi mismo poder ver cuales fueron las nuevas partes implementadas en el código.
 
 ### Reporte de resultados:
-```
-SUBIR IMÁGENES DE LAS PRUEBAS REALIZADAS
-```
+[Archivo Excel con las pruebas realizadas.](CasosPruebaProyectoRinconV1.0.0-V3.0.0.xlsx)
 
 ## Problemas encontrados y soluciones
 Algunos problemas con los que nos encontramos al momento de desarrollar el programa fueron:
