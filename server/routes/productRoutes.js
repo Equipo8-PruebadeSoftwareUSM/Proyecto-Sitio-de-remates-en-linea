@@ -5,6 +5,7 @@ const router = express.Router();
 const logger = require('../logger');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 // Configuración de Multer
 const storage = multer.diskStorage({
@@ -57,16 +58,17 @@ router.post('/add',authMiddleware,adminMiddleware, upload.single('imagen'), asyn
     res.status(500).json({ error: 'Error adding product' });
   }
 });
+
 // Ruta para actualizar un producto
-router.put('/update',authMiddleware, adminMiddleware, upload.single('imagen'), async (req, res) => {
-  const productId = req.body.id; // Obtén el ID del producto desde el cuerpo
+router.put('/update', authMiddleware, adminMiddleware, upload.single('imagen'), async (req, res) => {
+  const productId = req.body.id; // Obtener el ID del producto desde el cuerpo
   const productData = {
     id: productId,
     nombre: req.body.nombre,
     descripcion: req.body.descripcion,
     categoria: req.body.categoria,
-    precio_inicial: parseFloat(req.body.precio_inicial), // Asegúrate de que el precio sea un número
-    duracion_remate: parseInt(req.body.duracion_remate, 10), // Asegúrate de que la duración sea un número
+    precio_inicial: parseFloat(req.body.precio_inicial), 
+    duracion_remate: parseInt(req.body.duracion_remate, 10), 
   };
 
   try {
@@ -76,33 +78,54 @@ router.put('/update',authMiddleware, adminMiddleware, upload.single('imagen'), a
       return res.status(404).json({ error: 'Producto no encontrado' });
     }
 
-    // Si se proporciona una nueva imagen, elimina la imagen anterior
     if (req.file) {
-      const oldImagePath = path.join(__dirname, '../../public', existingProduct.imagen_url.replace(/^\/+/, ''));
+      const newImageName = req.file.filename;
+      const currentImageUrl = existingProduct.imagen_url;
 
-      // Evitar eliminar la imagen por defecto
-      if (existingProduct.imagen_url !== '/images/default-image.png' && fs.existsSync(oldImagePath)) {
-        await fs.promises.unlink(oldImagePath); // Eliminar la imagen antigua solo si no es la imagen por defecto
-        console.log(`Imagen anterior eliminada: ${oldImagePath}`);
+      // Verificar si la nueva imagen es diferente a la actual
+      const currentImageName = currentImageUrl.split('/').pop();
+
+      if (newImageName !== currentImageName) {
+        console.log('Nueva imagen cargada:', req.file);
+
+        // Guardar la nueva imagen
+        const newImageUrl = `/uploads/${newImageName}`; // Ruta de la nueva imagen
+        productData.imagen_url = newImageUrl; // Actualiza la ruta de la imagen en el producto
+        console.log('Nueva imagen URL establecida:', newImageUrl);
+
+        // Solo después de guardar la nueva imagen, intenta eliminar la anterior
+        const oldImagePath = path.join(__dirname, '../../public', currentImageUrl.replace(/^\/+/, ''));
+
+        // Si la imagen actual no es la imagen por defecto, eliminar la imagen antigua
+        if (currentImageUrl !== '/images/default-image.png' && currentImageUrl.startsWith('/uploads/') && fs.existsSync(oldImagePath)) {
+          await fs.promises.unlink(oldImagePath); // Eliminar la imagen antigua
+          console.log(`Imagen anterior eliminada: ${oldImagePath}`);
+        } else {
+          console.warn(`No se eliminó la imagen por defecto o no se encontró: ${oldImagePath}`);
+        }
       } else {
-        console.warn(`No se eliminó la imagen por defecto o no se encontró: ${oldImagePath}`);
+        // Si la nueva imagen es la misma que la actual
+        productData.imagen_url = existingProduct.imagen_url;
+        console.log('La nueva imagen es igual a la existente, no se actualiza la imagen.');
       }
-
-      // Guardar la nueva imagen
-      const newImageUrl = `/uploads/${req.file.filename}`; // Ruta de la nueva imagen
-      productData.imagen_url = newImageUrl; // Actualiza la ruta de la imagen en el producto
     } else {
       // Si no hay nueva imagen, mantener la imagen actual
-      productData.imagen_url = existingProduct.imagen_url; // Mantiene la imagen existente
+      productData.imagen_url = existingProduct.imagen_url;
+      console.log('Manteniendo imagen existente:', existingProduct.imagen_url);
     }
+
+    // Verifica los datos del producto antes de actualizar en la base de datos
+    console.log('Datos del producto a actualizar:', productData);
 
     // Actualiza el producto en la base de datos
     await updateProduct(productData);
-    
+    console.log('Producto actualizado en la base de datos:', productData);
+
     logger.info(`Producto actualizado: ${productData.nombre} (${productId})`);  // Registrar la actualización
     res.json({ message: 'Producto actualizado exitosamente' });
   } catch (error) {
-    logger.error('Error al actualizar el producto', { error });  // Registrar el error
+    // Registrar el error con más detalles
+    logger.error('Error al actualizar el producto', { error: error.message || error, stack: error.stack });
     res.status(500).json({ error: 'Error al actualizar el producto' });
   }
 });
