@@ -7,6 +7,11 @@ Proyecto para ramo Prueba de Software de la Universidad Federico Santa Maria.
 Video autoexplicativo del trabajo realizado: [Link Video](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
 
 Desarrollo de Documentación: [Link Documentación](DOCUMENTACION.md)
+
+>[!IMPORTANT]
+> Este proyecto no va a funcionar, si no estan las credenciales disponibles dentro del repositorio (`.env`).
+> Esto sirve para la conexión con la base de datos.
+
 ## Instrucciones de instalación
 
 1. Verificar si esta instalado npm y node
@@ -19,6 +24,7 @@ npm -v
 
 2. Acceder a la carpeta clonada e installar dependencias
 ```
+npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb multer winston dotenv 
 npm install jsonwebtoken
 npm install bcryptjs
 npm install jest supertest
@@ -27,6 +33,7 @@ npm install jest supertest
 3. Ejecutar servidor
 ```
 node server/server.js
+# npm start
 ```
 
 4. Finalmente ir a localhost y probar la aplicación
@@ -34,23 +41,26 @@ node server/server.js
 http://localhost:3000
 ```
 
-## Instalar dependencias
-1. Instalar el SDK de AWS y se crea la carpeta 'node_modules'
-```
-npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb multer winston dotenv 
+## Dependencias instaladas/utilizadas
 
-```
 - express
 - body-parser 
 - @aws-sdk/client-dynamodb 
 - @aws-sdk/lib-dynamodb
 - *dotenv*: para cargar el .env
 - *winston*: para logs
-- multer: manejo de archivos en imagenes 
+- multer: manejo de archivos en imagenes
+- jsonwebtoken
+- bcryptjs
+- jest supertest: testing
 
 ---
-### Configuración local de AWS (no es necesaria hacerla, estamos ocupando el .env)
-1. Configurar credenciales en AWS CLI (no es necesario, porque se tiene el .env)
+### Configuración local de AWS 
+
+> [!NOTE]
+> No es necesaría en el caso de utilizar archivo `.env`
+
+1. Configurar credenciales en AWS CLI 
 ```
 aws configure
 ```
@@ -63,39 +73,11 @@ Default region name [None]: sa-east-1
 Default output format [None]: json
 ```
 
-## Estructura del Proyecto
-
-```
-.
-├── LICENSE
-├── README.md
-├── logs ----------------- (se guardan los logs de errores e informacion)
-│   ├── error.log
-│   └── server.log
-├── node_modules         
-├── package-lock.json
-├── package.json
-├── public --------------- (interfaz web)
-│   ├── images
-│   ├── uploads
-│   ├── index.html
-│   ├── script.js
-│   └── styles.css
-└── server --------------- (backend)
-    ├── config
-    ├── middleware
-    ├── routes
-    └── services
-    ├── logger.js
-    ├── server.js
-├── .env
-
-```
 ## Links
 
-(link de 'AWS DynamoDB for javascript')[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/programming-with-javascript.html]
-(Operaciones dentro de AWSDynamoBd)[https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/workbench.querybuilder.operationbuilder.api.html#workbench.querybuilder.operationbuilder.Put]
-(link Azure)[https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode]
+- [link de 'AWS DynamoDB for javascript'](https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/programming-with-javascript.html)
+- [Operaciones dentro de AWSDynamoBd](https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/workbench.querybuilder.operationbuilder.api.html#workbench.querybuilder.operationbuilder.Put)
+- [link Azure](https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode)
 
 ## Autores
 - Diego Veas
