@@ -1,16 +1,28 @@
 # Equipo 8 Proyecto-Sitio-de-remates-en-linea
 Proyecto para ramo Prueba de Software de la Universidad Federico Santa Maria.
 
-* Herramienta de testing: ~~Mocha(Chai)~~ Jest
-* Tecnologías a usar en el proyecto: ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
+## Autores
+- Diego Veas
+- Carlos Vega
+- Pablo Campos
+- Luis Zegarra
 
-Video autoexplicativo del trabajo realizado: [Link Video](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
+### Herramienta de testing: 
+ ~~Mocha(Chai)~~ fue reemplazada y se utilizó **Jest** debido a problemas de compatibilidad (más explicado en la documentación)
+### Tecnologías a usar en el proyecto: 
+ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 
-Desarrollo de Documentación: [Link Documentación](DOCUMENTACION.md)
+---
+
+* Video autoexplicativo del trabajo realizado: [Link Video](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
+
+* Desarrollo de Documentación: [Link Documentación](DOCUMENTACION.md)
 
 >[!IMPORTANT]
-> Este proyecto no va a funcionar, si no estan las credenciales disponibles dentro del repositorio (`.env`).
+> Este proyecto no va a funcionar si las credenciales no están disponibles dentro del repositorio (`.env`).
 > Esto sirve para la conexión con la base de datos.
+>
+> El proyecto fue realizado para que funcione en Windows.
 
 ## Instrucciones de instalación
 
@@ -22,7 +34,7 @@ node -v
 npm -v
 ```
 
-2. Acceder a la carpeta clonada e installar dependencias
+2. Acceder a la carpeta clonada e instalar dependencias
 ```
 npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb multer winston dotenv 
 npm install jsonwebtoken
@@ -41,6 +53,10 @@ node server/server.js
 http://localhost:3000
 ```
 
+Si desea ejecutar las pruebas de Jest, deberá ejecutar el siguiente código en la cmd:
+```
+npm test
+```
 ## Dependencias instaladas/utilizadas
 
 - express
@@ -58,7 +74,7 @@ http://localhost:3000
 ### Configuración local de AWS 
 
 > [!NOTE]
-> No es necesaría en el caso de utilizar archivo `.env`
+> No es necesario realizar esta configuración en el caso de utilizar archivo `.env`
 
 1. Configurar credenciales en AWS CLI 
 ```
@@ -79,11 +95,7 @@ Default output format [None]: json
 - [Operaciones dentro de AWSDynamoBd](https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/workbench.querybuilder.operationbuilder.api.html#workbench.querybuilder.operationbuilder.Put)
 - [link Azure](https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode)
 
-## Autores
-- Diego Veas
-- Carlos Vega
-- Pablo Campos
-- Luis Zegarra
+
 
 
 
