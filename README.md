@@ -18,6 +18,7 @@ npm -v
 ```
 npm install jsonwebtoken
 npm install bcryptjs
+npm install jest supertest
 ```
 
 3. Ejecutar servidor
