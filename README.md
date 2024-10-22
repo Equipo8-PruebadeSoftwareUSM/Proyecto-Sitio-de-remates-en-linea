@@ -6,7 +6,7 @@ Proyecto para ramo Prueba de Software de la Universidad Federico Santa Maria.
 
 Video autoexplicativo del trabajo realizado: [Link Video](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
 
-Desarrollo de Documentación: [Link Documentación]()
+Desarrollo de Documentación: [Link Documentación](DOCUMENTACION.md)
 ## Instrucciones de instalación
 
 1. Verificar si esta instalado npm y node
