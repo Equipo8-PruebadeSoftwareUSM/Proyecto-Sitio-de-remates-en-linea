@@ -54,13 +54,14 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
-      # Configuración de credenciales de AWS
-      - name: Configure AWS Credentials
+      # Configuración de credenciales de AWS y JWT
+      - name: Set environment variables
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          echo "AWS credentials configured"
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        run: echo "Environment variables configured"
 
       - name: Login to Azure
         uses: azure/login@v2
