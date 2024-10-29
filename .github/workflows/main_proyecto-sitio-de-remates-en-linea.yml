@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - Proyecto-Sitio-de-remates-en-linea
 
 on:
@@ -20,6 +17,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
+
+      # Paso de depuración
+      - name: Debug Environment
+        run: |
+          node -v
+          npm -v
+          ls -al
 
       - name: npm install, build, and test
         run: |
@@ -43,7 +47,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write # This is required for requesting the JWT
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -54,15 +58,6 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
-      # Configuración de credenciales de AWS y JWT
-      - name: Set environment variables
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
-        run: echo "Environment variables configured"
-
       - name: Login to Azure
         uses: azure/login@v2
         with:
