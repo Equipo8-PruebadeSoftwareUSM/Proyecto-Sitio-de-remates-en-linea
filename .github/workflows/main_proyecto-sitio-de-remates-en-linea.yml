@@ -43,7 +43,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -54,6 +54,14 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
+      # Configuración de credenciales de AWS
+      - name: Configure AWS Credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          echo "AWS credentials configured"
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -68,4 +76,3 @@ jobs:
           app-name: 'Proyecto-Sitio-de-remates-en-linea'
           slot-name: 'Production'
           package: .
-          
