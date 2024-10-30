@@ -10,7 +10,7 @@ const {
 
 // Create DynamoDB client
 const client = new DynamoDBClient({
-  region: process.env.AWS_REGION,
+  region: process.env.AWS_REGION
 });
 
 // Create documented client for easier operations
