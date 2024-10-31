@@ -99,3 +99,4 @@ Default output format [None]: json
 
 
 
+EC2
