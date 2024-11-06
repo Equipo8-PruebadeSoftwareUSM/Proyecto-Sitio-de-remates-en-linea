@@ -100,4 +100,4 @@ Default output format [None]: json
 
 
 EC2
-Jenkins
+Jenkins v2
