@@ -1,28 +1,150 @@
+let authToken = localStorage.getItem('authToken');
 
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Funcionalidad de Login
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) throw new Error('Login failed');
+
+      const data = await response.json();
+      localStorage.setItem('authToken', data.token);
+      authToken = data.token;
+      
+      // Redirigir a la página de productos
+      window.location.href = 'products.html';
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      alert('Login failed. Please check your credentials.');
+    }
+  });
+}
+
+// Verificar autenticación en products.html
+if (!authToken && window.location.pathname.endsWith('products.html')) {
+  window.location.href = 'index.html';
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Funcionalidad de Logout
+const logoutButton = document.getElementById('logoutButton');
+if (logoutButton) {
+  logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('authToken');
+    window.location.href = 'index.html';
+  });
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Función para cargar productos
+async function fetchProducts() {
+  try {
+    const response = await fetch('/api/products', {
+      headers: {
+        'Authorization': `Bearer ${authToken}`
+      }
+    });
+
+    if (!response.ok) throw new Error(`Error fetching products: ${response.status}`);
+
+    const products = await response.json();
+    productTable.innerHTML = ''; // Clear table
+    products.forEach(product => appendProductToTable(product));
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    alert('Failed to load products. Please check the console for more details.');
+  }
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Función de búsqueda
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const clearButton = document.getElementById('clearButton');
+
+if (searchButton) {
+  searchButton.addEventListener('click', filterTable);
+}
+if (clearButton) {
+  clearButton.addEventListener('click', clearSearch);
+}
+
+function filterTable() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  const tableRows = document.querySelectorAll('#productTable tbody tr');
+
+  tableRows.forEach(row => {
+    const nombreCell = row.querySelector('td:nth-child(2)'); // Asume que el nombre está en la segunda columna
+    
+    if (nombreCell) {
+      const nombreText = nombreCell.textContent.trim().toLowerCase();
+      
+      if (nombreText.includes(searchTerm)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    }
+  });
+}
+
+function clearSearch() {
+  searchInput.value = '';
+  const tableRows = document.querySelectorAll('#productTable tbody tr');
+  tableRows.forEach(row => {
+    row.style.display = '';
+  });
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Funcionalidad para agregar, actualizar y mostrar productos
 const productForm = document.getElementById('productForm');
 const productTable = document.querySelector('#productTable tbody');
 const updateButton = document.getElementById('updateButton');
-let authToken = localStorage.getItem('authToken');
 
+if (productForm) {
+  productForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(productForm);
 
-// Add product on form submit
-productForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const formData = new FormData(productForm);
+    const productId = document.getElementById('productId').value;
+    if (productId) {
+      await updateProduct(formData); // Make sure formData is correctly structured
+    } else {
+      const newId = `Producto-${Date.now()}`;
+      formData.set('id', newId);
+      await addProduct(formData);
+    }
+    fetchProducts();
+    resetForm();
+  });
+}
 
-  const productId = document.getElementById('productId').value;
-  if (productId) {
-    await updateProduct(formData); // Make sure formData is correctly structured
-  } else {
-    const newId = `Producto-${Date.now()}`;
-    formData.set('id', newId);
-    await addProduct(formData);
-  }
-  fetchProducts()
-  resetForm();
-});
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
 
-// Function to add a product
+// Funcion para añadir un producto
 async function addProduct(formData) {
   try {
     const response = await fetch('/api/products/add', {
@@ -40,7 +162,10 @@ async function addProduct(formData) {
   }
 }
 
-// Function to update a product
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Función para actualizar un producto
 async function updateProduct(formData) {
   try {
     const response = await fetch(`/api/products/update`, {
@@ -58,76 +183,10 @@ async function updateProduct(formData) {
   }
 }
 
-// Function to fetch products
-async function fetchProducts() {
-  try {
-    const response = await fetch('/api/products', {
-      headers: {
-        'Authorization': `Bearer ${authToken}`
-      }
-    });
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
 
-    if (!response.ok) throw new Error(`Error fetching products: ${response.status}`);
-
-    const products = await response.json();
-    if (!products.length) {
-      console.log('No products found');
-      return;
-    }
-    
-    productTable.innerHTML = ''; // Clear table
-    products.forEach(product => appendProductToTable(product));
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    alert('Failed to load products. Please check the console for more details.');
-  }
-}
-
-function editProduct(productId) {
-  const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === productId);
-  const product = {
-    id: productRow.cells[0].innerText,
-    nombre: productRow.cells[1].innerText,
-    descripcion: productRow.cells[2].innerText,
-    categoria: productRow.cells[3].innerText,
-    precio_inicial: productRow.cells[4].innerText,
-    duracion_remate: productRow.cells[5].innerText,
-  };
-
-  // Llenar el formulario con los datos del producto
-  document.getElementById('productId').value = product.id;
-  document.getElementById('nombre').value = product.nombre;
-  document.getElementById('descripcion').value = product.descripcion;
-  document.getElementById('categoria').value = product.categoria;
-  document.getElementById('precio_inicial').value = product.precio_inicial;
-  document.getElementById('duracion_remate').value = product.duracion_remate;
-
-  // Mostrar el botón de actualización
-  updateButton.style.display = 'inline-block';
-}
-
-
-// Función para restablecer el formulario después de actualizar o agregar un producto
-function resetForm() {
-  document.getElementById('productId').value = ''; // Limpiar el campo oculto productId
-  productForm.reset(); // Restablecer el formulario
-  updateButton.style.display = 'none'; // Ocultar el botón de actualizar
-}
-
-// Función para eliminar un producto
-async function deleteProduct(productId) {
-  const response = await fetch(`/api/products/${productId}`, {headers: {
-    'Authorization': `Bearer ${authToken}`
-  },
-  method: 'DELETE'} );
-  if (response.ok) {
-    removeProductFromTable(productId); // Eliminar el producto de la tabla sin refrescar la página
-  } else {
-    console.error('Error al eliminar el producto.');
-  }
-}
-
-// Function to append a product to the table
+// Funciones de ayuda para manipular la tabla de productos
 function appendProductToTable(product) {
   const row = document.createElement('tr');
   row.innerHTML = `
@@ -141,6 +200,7 @@ function appendProductToTable(product) {
     <td>
       <button onclick="editProduct('${product.id}')">Editar</button>
       <button onclick="deleteProduct('${product.id}')">Eliminar</button>
+      <button onclick="window.location.href='detalle_producto.html?id=${product.id}'; fetchproductDetail(${product.id})">Ver Detalle</button>
     </td>
   `;
   productTable.appendChild(row);
@@ -158,124 +218,148 @@ function updateProductInTable(product) {
   }
 }
 
-function removeProductFromTable(productId) {
+function editProduct(productId) {
   const productRow = Array.from(productTable.rows).find(row => row.cells[0].innerText === productId);
-  if (productRow) {
-    productRow.remove();
-  }
+  document.getElementById('productId').value = productRow.cells[0].innerText;
+  document.getElementById('nombre').value = productRow.cells[1].innerText;
+  document.getElementById('descripcion').value = productRow.cells[2].innerText;
+  document.getElementById('categoria').value = productRow.cells[3].innerText;
+  document.getElementById('precio_inicial').value = productRow.cells[4].innerText;
+  document.getElementById('duracion_remate').value = productRow.cells[5].innerText;
 }
 
-// Other helper functions (resetForm, updateProductInTable, removeProductFromTable) remain unchanged
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
 
-// Login functionality
-const loginForm = document.getElementById('loginForm');
-loginForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
-
+// Función para eliminar un producto
+async function deleteProduct(productId) {
   try {
-    const response = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+    await fetch(`/api/products/${productId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${authToken}` }
     });
-
-    if (!response.ok) throw new Error('Login failed');
-    
-    const data = await response.json();
-    authToken = data.token;
-    localStorage.setItem('authToken', authToken);
-    
-    document.getElementById('loginContainer').style.display = 'none';
-    document.getElementById('loginForm').style.display = 'none'; //Si se incluye esto lanza un mensaje de brecha de seguridad
-    // document.getElementById('logo').style.display = 'none'; //Si se incluye esto lanza un mensaje de brecha de seguridad
-    document.getElementById('productContainer').style.display = 'block';
     fetchProducts();
   } catch (error) {
-    console.error('Login error:', error);
-    alert('Login failed. Please check your credentials.');
+    console.error('Error al eliminar el producto:', error);
   }
-});
-
-// Logout functionality
-function logout() {
-  localStorage.removeItem('authToken');
-  authToken = null;
-  document.getElementById('loginContainer').style.display = 'block';
-  document.getElementById('loginForm').style.display = 'block';
-  // document.getElementById('logo').style.display = 'block';
-  document.getElementById('productContainer').style.display = 'none';
 }
 
-// Logout button listener
-document.getElementById('logoutButton').addEventListener('click', logout);
+// Evento para cargar productos al cargar la página de products.html
+if (window.location.pathname.endsWith('products.html') && authToken) {
+  fetchProducts();
+}
 
-// On page load, check if token exists
-window.addEventListener('load', () => {
-  if (authToken) {
-    document.getElementById('loginContainer').style.display = 'none';
-    document.getElementById('productContainer').style.display = 'block';
-    fetchProducts();
-  }
-});
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
 
-//---------------------------------------------------------
+async function fetchProductDetail(productId) {
 
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
-const clearButton = document.getElementById('clearButton');
-const tableRows = document.querySelectorAll('#productTable tbody tr');
+  const urlParams = new URLSearchParams(window.location.search);
+  const productoId = urlParams.get('id');
 
-// Evento para buscar producto
-searchButton.addEventListener('click', filterTable);
+  try {
 
-// Evento para cancelar la búsqueda
-clearButton.addEventListener('click', clearSearch);
+    const response = await fetch(`/api/products`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
 
-/* 
-Filter Table:
---> Recibe la palabra ingresada y convierte todo a minusculas
-    para realizar una busqueda más efectiva, luego de eso 
-    "oculta" aquellos productos que no tengan contenido similar al buscado
-*/
-function filterTable() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  const tableRows = document.querySelectorAll('#productTable tbody tr');
+    if (!response.ok) throw new Error('Error al obtener el detalle del producto');
 
-  tableRows.forEach(row => {
-    const nombreCell = row.querySelector('td:nth-child(2)'); 
-    // Indice para buscar según los nombres de los productos
     
-    if (nombreCell) {
-      const nombreText = nombreCell.textContent.trim().toLowerCase();
-      
-      if (nombreText.includes(searchTerm)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
+    const product = (await response.json()).find(p => p.id === productoId);
 
-    }
-  });
+
+    // Llenar los campos de la página con los datos del producto
+    document.getElementById('productId').innerText = productoId;
+    document.getElementById('productName').innerText = product.nombre;
+    document.getElementById('productDescription').innerText = product.descripcion;
+    document.getElementById('productCategory').innerText = product.categoria;
+    document.getElementById('productPrice').innerText = product.precio_inicial;
+    document.getElementById('productDuration').innerText = product.duracion_remate;
+    document.getElementById('productImage').src = product.imagen_url || 'path_to_placeholder_image.jpg';
+        
+  } catch (error) {
+    console.error('Error al cargar el detalle del producto:', error);
+    //alert('No se pudo cargar el producto. Intenta nuevamente.');
+  }
 }
 
+fetchProductDetail();
 
-/*
-Clear Search:
---> Cancela la búsqueda realizada para volver
-    a mostrar todas las filas de productos
-    ...
-    más o menos hace lo mismo que la función
-    anterior, pero con una palabra "vacia"
-*/
- function clearSearch() {
-  searchInput.value = '';
-  const tableRows = document.querySelectorAll('#productTable tbody tr');
-  tableRows.forEach(row => {
-      row.style.display = '';
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+// Mostrar el modal para editar el precio
+document.getElementById('editPriceButton').addEventListener('click', () => {
+  const modal = new bootstrap.Modal(document.getElementById('editPriceModal'));
+  modal.show();
+});
+
+// Función para actualizar el precio al ofertar
+async function updateProductPrice() {
+
+  //---------------------------------------------------------------------------------------------
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const productoId = urlParams.get('id');
+
+  const response = await fetch(`/api/products`, {
+    headers: { 'Authorization': `Bearer ${authToken}` }
   });
+  if (!response.ok) throw new Error('Error al obtener el detalle del producto');
+
+  const product = (await response.json()).find(p => p.id === productoId);
+
+  const nombreP = document.getElementById('productName').innerText = product.nombre;
+  const descripcionP = document.getElementById('productDescription').innerText = product.descripcion;
+  const categoriaP = document.getElementById('productCategory').innerText = product.categoria;
+  const duracionP = document.getElementById('productDuration').innerText = product.duracion_remate;
+  const imagenP = document.getElementById('productImage').src = product.imagen_url || 'path_to_placeholder_image.jpg';
+
+  let originalPrice = 0;  // Variable para almacenar el precio original
+  originalPrice = product.precio_inicial;
+  const newPrice = document.getElementById('newPrice').value;
+
+  //---------------------------------------------------------------------------------------------
+
+  // Validar si el precio ingresado es mayor o igual al precio original
+  if (!newPrice || isNaN(newPrice) || newPrice <= 0) {
+    alert('Por favor, ingresa un precio válido.');
+    return;
+  }
+
+  if (newPrice < originalPrice) {
+    alert(`El nuevo precio no puede ser menor al precio original (${originalPrice}).`);
+    return;
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  try {
+    const response = await fetch(`/api/products/update`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id: productoId, nombre: nombreP, descripcion: descripcionP, categoria: categoriaP, precio_inicial: newPrice, duracion_remate: duracionP, imagen_url: imagenP })
+    });
+  
+    if (!response.ok) throw new Error('Error al actualizar el precio');
+    const updatedProduct = await response.json();
+  
+    // Actualizar el precio en la página web
+    fetchProductDetail();
+  
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editPriceModal'));
+    modal.hide();
+  
+    alert('Oferta realizada correctamente');
+  } catch (error) {
+    console.error('Error al actualizar el precio:', error);
+    alert('No se pudo actualizar el precio. Intenta nuevamente.');
+  }
   
 }
-
-//---------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
