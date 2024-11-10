@@ -44,7 +44,7 @@ router.post('/add',authMiddleware,adminMiddleware, upload.single('imagen'), asyn
     descripcion: req.body.descripcion,
     categoria: req.body.categoria,
     precio_inicial: parseFloat(req.body.precio_inicial), // Asegúrate de que el precio sea un número
-    duracion_remate: parseInt(req.body.duracion_remate, 10), // Asegúrate de que la duración sea un número
+    duracion_remate: req.body.duracion_remate, // Asegúrate de que la duración sea una fecha
     imagen_url: imagen_url,  // Usar la URL de la imagen proporcionada o la imagen por defecto
   };
 
@@ -68,7 +68,7 @@ router.put('/update', authMiddleware, adminMiddleware, upload.single('imagen'), 
     descripcion: req.body.descripcion,
     categoria: req.body.categoria,
     precio_inicial: parseFloat(req.body.precio_inicial), 
-    duracion_remate: parseInt(req.body.duracion_remate, 10), 
+    duracion_remate: req.body.duracion_remate, 
   };
 
   try {
