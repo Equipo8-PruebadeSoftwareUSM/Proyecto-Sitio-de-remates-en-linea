@@ -14,9 +14,11 @@ ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 
 ---
 
-* Video autoexplicativo del trabajo realizado: [Link Video](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
+* Video autoexplicativo del trabajo realizado en Entrega 1: [Link Video Entrega 1](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
+* Video autoexplicativo del trabajo realizado en Entrega 2: [Link Video Entrega 2](https://youtu.be/pf3v5T0H4-g?si=D3eSNRvD5VJZY2Sx)
 
-* Desarrollo de Documentación: [Link Documentación](DOCUMENTACION.md)
+* Desarrollo de Documentación para Entrega 1: [Link Documentación](DOCUMENTACION.md)
+* Desarrollo de Documentación para Entrega 1: [Link Documentación](DOCUMENTACION-SPRINT2.md)
 
 >[!IMPORTANT]
 > Este proyecto no va a funcionar si las credenciales no están disponibles dentro del repositorio (`.env`).
@@ -52,6 +54,13 @@ node server/server.js
 ```
 http://localhost:3000
 ```
+
+* Usuario para probar la aplicación
+```
+username: user@example.com
+password: userpassword
+```
+
 
 Si desea ejecutar las pruebas de Jest, deberá ejecutar el siguiente código en la cmd:
 ```
