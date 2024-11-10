@@ -252,49 +252,13 @@ if (window.location.pathname.endsWith('products.html') && authToken) {
 //-------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------
 
-/*
-// Función de búsqueda (alt detalle producto)
-
-if (detalleButton) {
-  detalleButton.addEventListener('click', searchTable);
-}
-if (regresarButton) {
-  regresarButton.addEventListener('click', backSearch);
-}
-
-function searchTable(productId) {
-  const searchTerm = productId.value.trim().toLowerCase();
-  const tableRows = document.querySelectorAll('#productTable tbody tr');
-
-  tableRows.forEach(row => {
-    const nombreCell = row.querySelector('td:nth-child(1)'); // Asume que el nombre está en la segunda columna
-    
-    if (nombreCell) {
-      const nombreText = nombreCell.textContent.trim().toLowerCase();
-      
-      if (nombreText.includes(searchTerm)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    }
-  });
-}
-
-function backSearch() {
-  searchInput.value = '';
-  const tableRows = document.querySelectorAll('#productTable tbody tr');
-  tableRows.forEach(row => {
-    row.style.display = '';
-  });
-}
-*/
-
-
 
 async function fetchProductDetail(productId) {
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const productoId = urlParams.get('id');
+
   try {
-    console.log("Product ID:", productId); // Imprime el valor de productId
 
     const response = await fetch(`/api/products`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
@@ -302,13 +266,12 @@ async function fetchProductDetail(productId) {
 
     if (!response.ok) throw new Error('Error al obtener el detalle del producto');
 
-    const product = await response.json();
+    
+    const product = (await response.json()).find(p => p.id === productoId);
 
-    // Guardar el precio original
-    originalPrice = product.precio_inicial;
 
     // Llenar los campos de la página con los datos del producto
-    document.getElementById('productId').innerText = product.id;
+    document.getElementById('productId').innerText = productoId;
     document.getElementById('productName').innerText = product.nombre;
     document.getElementById('productDescription').innerText = product.descripcion;
     document.getElementById('productCategory').innerText = product.categoria;
@@ -335,8 +298,30 @@ document.getElementById('editPriceButton').addEventListener('click', () => {
 
 // Función para actualizar el precio
 async function updateProductPrice() {
+
+  //---------------------------------------------------------------------------------------------
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const productoId = urlParams.get('id');
+
+  const response = await fetch(`/api/products`, {
+    headers: { 'Authorization': `Bearer ${authToken}` }
+  });
+  if (!response.ok) throw new Error('Error al obtener el detalle del producto');
+
+  const product = (await response.json()).find(p => p.id === productoId);
+
+  const nombreP = document.getElementById('productName').innerText = product.nombre;
+  const descripcionP = document.getElementById('productDescription').innerText = product.descripcion;
+  const categoriaP = document.getElementById('productCategory').innerText = product.categoria;
+  const duracionP = document.getElementById('productDuration').innerText = product.duracion_remate;
+  const imagenP = document.getElementById('productImage').src = product.imagen_url || 'path_to_placeholder_image.jpg';
+
   let originalPrice = 0;  // Variable para almacenar el precio original
+  originalPrice = product.precio_inicial;
   const newPrice = document.getElementById('newPrice').value;
+
+  //---------------------------------------------------------------------------------------------
 
   // Validar si el precio ingresado es mayor o igual al precio original
   if (!newPrice || isNaN(newPrice) || newPrice <= 0) {
@@ -349,33 +334,50 @@ async function updateProductPrice() {
     return;
   }
 
+  //---------------------------------------------------------------------------------------------
+
   try {
-    const response = await fetch(`/api/products/${productId}/product.precio_inicial`, { //RAZON DE FALLO
+    const response = await fetch(`/api/products/update`, {
       method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${authToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ precio_inicial: newPrice })
-      });
-
-      if (!response.ok) throw new Error('Error al actualizar el precio');
-
-        const updatedProduct = await response.json();
-
-        // Actualizar el precio en la tabla
-        document.getElementById('productPrice').innerText = updatedProduct.precio_inicial;
-
-        // Cerrar el modal
-        const modal = bootstrap.Modal.getInstance(document.getElementById('editPriceModal'));
-        modal.hide();
-
-        alert('Precio actualizado correctamente');
-      } catch (error) {
-        console.error('Error al actualizar el precio:', error);
-        alert('No se pudo actualizar el precio. Intenta nuevamente.');
-      }
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id: productoId, nombre: nombreP, descripcion: descripcionP, categoria: categoriaP, precio_inicial: newPrice, duracion_remate: duracionP, imagen_url: imagenP })
+    });
+  
+    if (!response.ok) throw new Error('Error al actualizar el precio');
+    const updatedProduct = await response.json();
+  
+    // Actualizar el precio en la página web
+    fetchProductDetail();
+  
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editPriceModal'));
+    modal.hide();
+  
+    alert('Precio actualizado correctamente');
+  } catch (error) {
+    console.error('Error al actualizar el precio:', error);
+    alert('No se pudo actualizar el precio. Intenta nuevamente.');
   }
+  
+}
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
+document.getElementById('sendEmailButton').addEventListener('click', function() {
+  var emailParams = {
+    to_name: "sebaszegarra@gmail.com",  // Dirección del destinatario
+    from_name: "rincondelolvido@outlook.com",
+    message: "Gracias por participar en nuestro remate. ¡Buena suerte!"
+  };
 
-//-------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------------------
+  emailjs.send('outlook', 'template_0x6kaaa', emailParams)
+  .then(function(response) {
+    console.log(response);
+    alert('Correo enviado con éxito!');
+  }, function(error) {
+    console.log(error);
+    alert('Error al enviar el correo');
+  });
+  
+});
