@@ -1,4 +1,6 @@
 # Documentación Entrega 2
+Video autoexplicativo del trabajo realizado en Entrega 2: [Link Video Entrega 2](https://youtu.be/pf3v5T0H4-g?si=D3eSNRvD5VJZY2Sx)
+
 ## Alcances de la herramienta
 ### Herramienta de testing: Jest (React JS), Supertest
 Jest es un framework de testing desarrollado por Facebook, ideal para aplicaciones React. Permite hacer pruebas unitarias, asíncronas y de integración, tanto en frontend como backend.
