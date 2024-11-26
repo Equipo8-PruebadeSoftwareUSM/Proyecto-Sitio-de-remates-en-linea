@@ -4,7 +4,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "jest"
+    "test": "jest",
+    "seleniumProduct": "node server/productTest.js",
+    "seleniumLogin": "node server/loginTest.js" 
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.665.0",
