@@ -42,6 +42,9 @@ npm install express body-parser @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb m
 npm install jsonwebtoken
 npm install bcryptjs
 npm install jest supertest
+npm install selenium-webdriver
+npm install chromedriver
+
 ```
 
 3. Ejecutar servidor
@@ -78,6 +81,9 @@ npm test
 - jsonwebtoken
 - bcryptjs
 - jest supertest: testing
+- selenium-webdriver: testing con selenium
+- chromedriver: driver para levantar testing de selenium en chrome
+
 
 ---
 ### Configuración local de AWS 
