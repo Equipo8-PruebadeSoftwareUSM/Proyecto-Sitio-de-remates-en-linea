@@ -25,7 +25,7 @@ Link página web: https://proyecto-sitio-de-remates-en-linea.azurewebsites.net/
 ## Descripción del trabajo realizado
 ### Proyecto:
 El caso de estudio que fue escogido para este proyecto fue el "Sitio de remates en linea: Rincón del olvido" ([Historia del caso](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/Tema-presentacion-proyecto.md))
-* **Problema:** Impedimento en el funcionamiento de la tienda de manera presencial debido a la opresión de la Alianza Combineal y ataque de los alienigenas.
+* **Problema:** Impedimento en el funcionamiento de la tienda de manera presencial debido a la opresión de la Alianza Combineal y ataque de los alienígenas.
 * **Solución:** Creación de una tienda online para que los compradores (rebeldes y coleccionistas) puedan realizar transacciones de manera rápida y segura.
 
 Para la **primera entrega** de este proyecto, las funcionalidades realizadas fueron: 
