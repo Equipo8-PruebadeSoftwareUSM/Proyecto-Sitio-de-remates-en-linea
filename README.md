@@ -20,14 +20,18 @@ ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 * Desarrollo de Documentación para Entrega 1: [Link Documentación Entrega 1](DOCUMENTACION.md)
 * Desarrollo de Documentación para Entrega 2: [Link Documentación Entrega 2](DOCUMENTACION-SPRINT2.md)
 
->[!IMPORTANT]
-> Este proyecto no va a funcionar si las credenciales no están disponibles dentro del repositorio (`.env`).
-> Esto sirve para la conexión con la base de datos.
->
-> El proyecto fue realizado para que funcione en Windows.
+* Link página web (Disponible a la fecha 25/11/2024): https://proyecto-sitio-de-remates-en-linea.azurewebsites.net/
+> [!IMPORTANT]
+> Solo se puede acceder con una cuenta creada por un administrador.
+> Esto fue creado de esta forma por la descripcion del caso ([Historia del caso](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/Tema-presentacion-proyecto.md)).
+
+#### Usuario para probar la aplicación
+```
+username: user@example.com
+password: userpassword
+```
 
 ## Instrucciones de instalación
-
 1. Verificar si esta instalado npm y node
 ```
 node -v
@@ -69,6 +73,7 @@ Si desea ejecutar las pruebas de Jest, deberá ejecutar el siguiente código en 
 ```
 npm test
 ```
+
 ## Dependencias instaladas/utilizadas
 
 - express
@@ -85,32 +90,11 @@ npm test
 - chromedriver: driver para levantar testing de selenium en chrome
 
 
----
-### Configuración local de AWS 
-
-> [!NOTE]
-> No es necesario realizar esta configuración en el caso de utilizar archivo `.env`
-
-1. Configurar credenciales en AWS CLI 
-```
-aws configure
-```
-
-Pedirá lo siguiente:
-```
-AWS Access Key ID [None]: <TU_ACCESS_KEY_ID>
-AWS Secret Access Key [None]: <TU_SECRET_ACCESS_KEY>
-Default region name [None]: sa-east-1
-Default output format [None]: json
-```
-
 ## Links
 
 - [link de 'AWS DynamoDB for javascript'](https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/programming-with-javascript.html)
 - [Operaciones dentro de AWSDynamoBd](https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/workbench.querybuilder.operationbuilder.api.html#workbench.querybuilder.operationbuilder.Put)
 - [link Azure](https://learn.microsoft.com/es-mx/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode)
-
-
 
 
 
