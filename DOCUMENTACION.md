@@ -29,8 +29,8 @@ Características: Mocks automáticos, pruebas snapshot, compatible con Enzyme y 
 ## Descripción del trabajo realizado
 
 ### Proyecto:
-El caso de estudio que fue escogido para este proyecto fue el "Sitio de remates en linea: Rincón del olvido"
-* **Problema:** Impedimento en el funcionamiento de la tienda de manera presencial debido a una cuarentena forzada.
+El caso de estudio que fue escogido para este proyecto fue el "Sitio de remates en linea: Rincón del olvido" ([Historia del caso](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/Tema-presentacion-proyecto.md))
+* **Problema:** Impedimento en el funcionamiento de la tienda de manera presencial debido a la opresión de la Alianza Combineal y ataque de los alienigenas.
 * **Solución:** Creación de una tienda online para que los compradores (rebeldes y coleccionistas) puedan realizar transacciones de manera rápida y segura.
 
 En este proyecto nos enfocaremos en implementar un **CRUD (create, read, update and delete)** de las funcionalidades principales de la página web.
