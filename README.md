@@ -18,7 +18,7 @@ ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 * Video autoexplicativo del trabajo realizado en Entrega 2: [Link Video Entrega 2](https://youtu.be/pf3v5T0H4-g?si=D3eSNRvD5VJZY2Sx)
 
 * Desarrollo de Documentación para Entrega 1: [Link Documentación Entrega 1](DOCUMENTACION.md)
-* Desarrollo de Documentación para Entrega 1: [Link Documentación Entrega 2](DOCUMENTACION-SPRINT2.md)
+* Desarrollo de Documentación para Entrega 2: [Link Documentación Entrega 2](DOCUMENTACION-SPRINT2.md)
 
 >[!IMPORTANT]
 > Este proyecto no va a funcionar si las credenciales no están disponibles dentro del repositorio (`.env`).
