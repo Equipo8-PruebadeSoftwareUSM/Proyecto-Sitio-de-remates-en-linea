@@ -7,8 +7,8 @@ Equipo 8 INF331 Pruebas de Software
 
 **Link de pagina web:** https://proyecto-sitio-de-remates-en-linea.azurewebsites.net
 #### Credenciales para usuario de prueba:
-user > user@example.com
-password > userpassword
+- user > user@example.com
+- password > userpassword
 
 ## Alcances de la solución implementada
 ### Uso de Selenium::
