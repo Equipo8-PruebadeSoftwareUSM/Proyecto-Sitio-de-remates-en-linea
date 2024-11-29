@@ -16,11 +16,11 @@ ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 
 * Video autoexplicativo del trabajo realizado en Entrega 1: [Link Video Entrega 1](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
 * Video autoexplicativo del trabajo realizado en Entrega 2: [Link Video Entrega 2](https://youtu.be/pf3v5T0H4-g?si=D3eSNRvD5VJZY2Sx)
-* Video autoexplicativo del trabajo realizado en Entrega 2: **AGREGAR**
+* Video autoexplicativo del trabajo realizado en Entrega 2: [Link Video Entrega 3](https://www.youtube.com/watch?v=e2LkHVpbyrY) 
 
 * Desarrollo de Documentación para Entrega 1: [Link Documentación Entrega 1](DOCUMENTACION-SPRINT1.md)
 * Desarrollo de Documentación para Entrega 2: [Link Documentación Entrega 2](DOCUMENTACION-SPRINT2.md)
-* Desarrollo de Documentación para Entrega 3: [Link Documentación Entrega 2](DOCUMENTACION-SPRINT3.md)
+* Desarrollo de Documentación para Entrega 3: [Link Documentación Entrega 3](DOCUMENTACION-SPRINT3.md)
 
 * Link página web (Disponible a la fecha 25/11/2024): https://proyecto-sitio-de-remates-en-linea.azurewebsites.net/
 > [!IMPORTANT]
