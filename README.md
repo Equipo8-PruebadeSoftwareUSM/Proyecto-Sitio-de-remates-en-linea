@@ -8,7 +8,7 @@ Proyecto para ramo Prueba de Software de la Universidad Federico Santa Maria.
 - Luis Zegarra
 
 ### Herramienta de testing: 
- ~~Mocha(Chai)~~ fue reemplazada y se utilizó **Jest** debido a problemas de compatibilidad (más explicado en la documentación)
+ ~~Mocha(Chai)~~ fue reemplazada y se utilizó **Jest** debido a problemas de compatibilidad (más explicado en la documentación para Entrega 1)
 ### Tecnologías a usar en el proyecto: 
 ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 
@@ -16,14 +16,16 @@ ReactJS (Front-end) + NodeJS(Back-end) + AWS Dynamo
 
 * Video autoexplicativo del trabajo realizado en Entrega 1: [Link Video Entrega 1](https://www.youtube.com/watch?v=KKrtQzG_7Nk)
 * Video autoexplicativo del trabajo realizado en Entrega 2: [Link Video Entrega 2](https://youtu.be/pf3v5T0H4-g?si=D3eSNRvD5VJZY2Sx)
+* Video autoexplicativo del trabajo realizado en Entrega 2: **AGREGAR**
 
 * Desarrollo de Documentación para Entrega 1: [Link Documentación Entrega 1](DOCUMENTACION.md)
 * Desarrollo de Documentación para Entrega 2: [Link Documentación Entrega 2](DOCUMENTACION-SPRINT2.md)
+* Desarrollo de Documentación para Entrega 3: **AGREGAR**
 
 * Link página web (Disponible a la fecha 25/11/2024): https://proyecto-sitio-de-remates-en-linea.azurewebsites.net/
 > [!IMPORTANT]
 > Solo se puede acceder con una cuenta creada por un administrador.
-> Esto fue creado de esta forma por la descripcion del caso ([Historia del caso](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/Tema-presentacion-proyecto.md)).
+> Fue creado de esta forma por lo planteado en la descripción del caso ([Historia del caso](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/Tema-presentacion-proyecto.md)).
 
 #### Usuario para probar la aplicación
 ```
@@ -72,6 +74,14 @@ password: userpassword
 Si desea ejecutar las pruebas de Jest, deberá ejecutar el siguiente código en la cmd:
 ```
 npm test
+```
+
+Si desea ejecutar las pruebas de Selenium, deberá ejecutar el servidor en una cmd, y en otra ejecutar los siguientes comandos:
+```
+node server/loginTest.js
+node server/productTest.js
+node server/detalleTest.js
+node server/remateTest.js
 ```
 
 ## Dependencias instaladas/utilizadas
