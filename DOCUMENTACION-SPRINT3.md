@@ -43,6 +43,7 @@ Para finalizar, se modificó la tabla que contiene el catálogo diferenciando la
 Aplicamos Jest para realizar pruebas en el frontend y backend, mediante comandos, estos ejecutan una serie de pruebas que están definidas para comprobar las funcionalidades de nuestras funciones y conexiones. En un principio teníamos pensado implementar Mocha (Chai), pero por un problema de versiones de javascript y para poder utilizarlo era necesario reescribir todos los archivos .js desde el "common js" al "ES module", encadenado problemas de compatibilidad con librerías que ya habíamos implementado. También realizamos pruebas manuales, para ir comprobando la efectividad de nuestro código a medida que desarrollamos, este excel está disponible dentro del repositorio GitHub ([Link exel de pruebas manuales](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/CasosPruebaProyectoRinconV1.0.0-V3.0.0.xlsx)).
 
 **Documentación entrega 1:** [Link GitHub Documento sprint 1](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/DOCUMENTACION.md).
+
 ---
 
 #### Entrega 2:
@@ -56,20 +57,15 @@ El servidor de Jenkins es un contenedor de Docker que se ejecuta de manera local
 
 Junto con lo mencionado previamente se realizaron dos requerimientos extra para el funcionamiento de nuestro sistema, los cuales fueron integrar una nueva vista  con el fin de poder ver la información asociada a un producto en específico, y dentro de esta misma vista habilitar la opción para que un usuario pudiera participar de un remate ofertando a un producto un monto mayor al que tiene actualmente registrado. Para la primera integración se agregó una nueva opción (un botón) para cada producto disponible en el catálogo que nos lleva a esta nueva vista. Se utiliza el ID asociado al producto para extraer su información de la base de datos, luego esta información se presenta en la nueva vista. Para la segunda integración se creó un modal que se muestra por encima de la información del producto, en este se le pide al usuario ingresar un monto para participar del remate. El monto debe ser mayor al actualmente ofertado, el sistema se encarga de verificar esto. Dicho monto será modificado en la base de datos, permitiendo que el producto tenga el nuevo valor asociado.
 
-Con todo esto, ahora la página web puede
-
+Con todo esto, ahora la página web puede:
 1. Registrarse para poder acceder a la vista de los productos.
-
-2. Ver la lista de productos. En el caso de ser un administrador, se puede: editar, borrar o crear un producto.
-
-
+2. Ver la lista de productos. En el caso de ser un administrador, se puede: editar, borrar o crear un producto.p
 3. Para crear un producto se deben completar todos los campos seleccionados.
 4. Ver la descripción de un producto dentro de una pestaña propia.
 
 
-
-
 Documentación entrega 2 : [Link GitHub Documento sprint 2](https://github.com/Equipo8-PruebadeSoftwareUSM/Proyecto-Sitio-de-remates-en-linea/blob/main/DOCUMENTACION-SPRINT2.md).
+
 ---
 
 ### Entrega 3:
@@ -100,6 +96,7 @@ Decidimos dejar las pruebas de Selenium fuera de la pipeline de Jenkins, esto pa
 - **Desplegar la aplicación en Azure App Service con credenciales:** necesitábamos proporcionar las credenciales necesarias para que pudiera conectarse con la base de datos. Este proceso nos generó algunos problemas, ya que desconocíamos cómo realizar dicha conexión de manera efectiva. Posteriormente, descubrimos que podíamos agregar las credenciales tanto en el apartado de llaves en GitHub Actions como en la configuración de Azure. Esto resolvió los inconvenientes que enfrentamos.
 
 ---
+
 ### Entrega 3:
 - **Implementar Selenium con la página web:** debido al desconocimiento de la herramienta, realizar la implementación para que pudiera ejecutar las pruebas  dentro de la página web no fue un paso sencillo. Se tuvo que realizar una investigación exhaustiva para lograr que las acciones de selenium reaccionaran. Existieron algunos problemas en la creación de casos de pruebas, pues era difícil de identificar la causa de los errores, la gran mayoría fueron errores causados porque Selenium ejecuta las acciones muy rápido, se arregló poniendo delays entremedio del flujo.
 - **Tiempo de desarrollo:** como equipo tratamos de planificarlo de la mejor manera el sprint 3, pero como son las últimas fechas del semestre académico, los tiempos de cada uno se redujeron drásticamente, esto llevó a que no pudiéramos realizar reuniones para comentar el avance, culminando en una reunión express para dejar todo terminado y encaminado a la entrega final.
